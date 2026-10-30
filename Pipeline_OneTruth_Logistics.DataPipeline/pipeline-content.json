@@ -46,7 +46,7 @@
         "name": "silver_to_gold_fact",
         "dependsOn": [
           {
-            "activity": "bronse_to_silver",
+            "activity": "silver_to_gold_dim",
             "dependencyConditions": [
               "Succeeded"
             ]
@@ -116,12 +116,6 @@
         },
         "name": "gold_data_quality",
         "dependsOn": [
-          {
-            "activity": "silver_to_gold_dim",
-            "dependencyConditions": [
-              "Succeeded"
-            ]
-          },
           {
             "activity": "silver_to_gold_fact",
             "dependencyConditions": [

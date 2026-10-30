@@ -35,6 +35,7 @@
 from pyspark.sql import functions as F
 from pyspark.sql.types import *
 
+
 SILVER = "Silver_OneTruth_Logistics"
 GOLD   = "Gold_OneTruth_Logistics"
 
@@ -311,6 +312,7 @@ fact_exception = fact_exception.select(
 write_gold(fact_exception, "FactException")
 
 print("\n=== Gold facts complete ===")
+
 
 # METADATA ********************
 

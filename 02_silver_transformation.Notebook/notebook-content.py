@@ -8,22 +8,20 @@
 # META   },
 # META   "dependencies": {
 # META     "lakehouse": {
-# META       "default_lakehouse_name": "",
-# META       "default_lakehouse_workspace_id": "",
-# META       "known_lakehouses": []
-# META     },
-# META     "warehouse": {
-# META       "default_warehouse": "7c896135-7e0c-43f6-8cfa-abb1104879fb",
-# META       "known_warehouses": [
+# META       "default_lakehouse": "fc8d20a0-fbd3-4e8b-b0a3-9e2296abe7bf",
+# META       "default_lakehouse_name": "Silver_OneTruth_Logistics",
+# META       "default_lakehouse_workspace_id": "fd2b1bb0-e015-4db1-b2c4-5768a0cba224",
+# META       "known_lakehouses": [
 # META         {
-# META           "id": "7c896135-7e0c-43f6-8cfa-abb1104879fb",
-# META           "type": "Lakewarehouse"
+# META           "id": "e5f8de90-fc40-42e3-bfd9-4c487dd433a1"
 # META         },
 # META         {
-# META           "id": "519a8a4c-3402-473c-b668-486d21565b5a",
-# META           "type": "Lakewarehouse"
+# META           "id": "fc8d20a0-fbd3-4e8b-b0a3-9e2296abe7bf"
 # META         }
 # META       ]
+# META     },
+# META     "warehouse": {
+# META       "known_warehouses": []
 # META     }
 # META   }
 # META }
@@ -38,6 +36,7 @@
 # ─── Cell 1: Shared helpers ───────────────────────────────────────────────────
 from pyspark.sql import functions as F
 from pyspark.sql.types import *
+
 
 BRONZE = "Bronse_OneTruth_Logistics"
 SILVER = "Silver_OneTruth_Logistics"

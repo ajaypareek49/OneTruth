@@ -36,6 +36,8 @@ from pyspark.sql import functions as F
 from pyspark.sql.types import *
 from pyspark.sql.window import Window
 
+
+
 SILVER = "Silver_OneTruth_Logistics"
 GOLD   = "Gold_OneTruth_Logistics"
 
@@ -222,6 +224,7 @@ dim_cost_type = spark.createDataFrame(cost_data, ct_schema)
 write_gold(dim_cost_type, "DimCostType")
 
 print("\n=== Gold dimensions complete ===")
+
 
 # METADATA ********************
 

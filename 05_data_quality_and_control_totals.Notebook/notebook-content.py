@@ -30,9 +30,11 @@
 from pyspark.sql import functions as F
 from pyspark.sql.types import *
 import json
-from datetime import datetime
+
+
 
 GOLD = "Gold_OneTruth_Logistics.dbo"
+SILVER= "Silver_OneTruth_Logistics.dbo"
 
 dq_results   = []
 ct_results   = []
@@ -138,7 +140,7 @@ print("\n=== D. Certified Measure Control Totals ===")
 # Control totals are computed directly from Silver staging (source of truth)
 # and compared against Gold. Variance must be ≤ 1%.
 
-silver_shipment = spark.table("silver.fact_shipment_stg")
+silver_shipment = spark.table("Silver_OneTruth_Logistics.dbo.fact_shipment_stg")
 
 # --- Measure 1: On-Time Delivery % ---
 # Eligible: Delivered shipments with non-null actual_delivery_date
@@ -157,13 +159,13 @@ gold_otd_pct = gold_ontime_otd / gold_eligible_otd if gold_eligible_otd else 0
 control_total("On-Time Delivery %", gold_otd_pct, silver_otd_pct)
 
 # --- Measure 2: Total Freight Cost ---
-silver_inv = spark.table("silver.fact_freight_invoice_stg")
+silver_inv = spark.table("{SILVER}.fact_freight_invoice_stg")
 silver_total_cost = silver_inv.agg(F.sum("invoice_amount_usd")).collect()[0][0] or 0
 gold_total_cost   = fact_invoice.agg(F.sum("invoice_amount_usd")).collect()[0][0] or 0
 control_total("Total Freight Cost (USD)", gold_total_cost, silver_total_cost)
 
 # --- Measure 3: Order Fulfilment Rate ---
-silver_orders = spark.table("silver.fact_order_stg")
+silver_orders = spark.table("{SILVER}.fact_order_stg")
 silver_total_orders     = silver_orders.count()
 silver_fulfilled_orders = silver_orders.filter(F.col("order_status") == "Delivered").count()
 silver_ofr = silver_fulfilled_orders / silver_total_orders if silver_total_orders else 0
@@ -175,7 +177,7 @@ gold_ofr = gold_fulfilled_orders / gold_total_orders if gold_total_orders else 0
 control_total("Order Fulfilment Rate", gold_ofr, silver_ofr)
 
 # --- Measure 4: Supplier On-Time Inbound % ---
-silver_receipts = spark.table("silver.fact_inbound_receipt_stg")
+silver_receipts = spark.table("{SILVER}.fact_inbound_receipt_stg")
 silver_receipt_total  = silver_receipts.filter(F.col("receipt_status") == "Received").count()
 silver_ontime_receipt = silver_receipts.filter(
     (F.col("receipt_status") == "Received") & (F.col("is_on_time_inbound") == True)
@@ -191,7 +193,7 @@ gold_soti = gold_ontime_receipt / gold_receipt_total if gold_receipt_total else 
 control_total("Supplier On-Time Inbound %", gold_soti, silver_soti)
 
 # --- Measure 5: Exception Count ---
-silver_exc = spark.table("silver.fact_exception_stg")
+silver_exc = spark.table("{SILVER}.fact_exception_stg")
 silver_exc_count = silver_exc.count()
 gold_exc_count   = spark.table(f"{GOLD}.FactException").count()
 control_total("Exception Count (row count)", float(gold_exc_count), float(silver_exc_count))
@@ -218,6 +220,7 @@ else:
     for r in failed_dq + failed_ct:
         print(f"  - {r}")
     dbutils.notebook.exit("FAIL")
+
 
 # METADATA ********************
 
