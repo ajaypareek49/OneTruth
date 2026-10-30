@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Pipeline_OneTruth_Logistics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "73cd924d-bb06-9c38-424c-97f79d7b830e"
+  }
+}
