@@ -1,0 +1,122 @@
+table dimcarrier
+	lineageTag: e1372339-27e3-4acb-8ff1-d939195be7e7
+	sourceLineageTag: [dbo].[dimcarrier]
+
+	column carrier_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: dbbd2cec-60bb-4247-a763-ccf33533bc0c
+		sourceLineageTag: carrier_sk
+		summarizeBy: none
+		sourceColumn: carrier_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_nk
+		dataType: string
+		isHidden
+		lineageTag: 154260b2-406b-4e10-a30d-858573e88a6b
+		sourceLineageTag: carrier_nk
+		summarizeBy: none
+		sourceColumn: carrier_nk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_name
+		dataType: string
+		lineageTag: 7a5819e0-d9be-41d4-8790-7aa4a2e40318
+		sourceLineageTag: carrier_name
+		summarizeBy: none
+		sourceColumn: carrier_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_type
+		dataType: string
+		lineageTag: 7d4a9bb9-9925-44ef-8de1-a39e19661204
+		sourceLineageTag: carrier_type
+		summarizeBy: none
+		sourceColumn: carrier_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column service_level
+		dataType: string
+		lineageTag: e14f37f7-54a8-4a6f-9a1f-ce587241c5ce
+		sourceLineageTag: service_level
+		summarizeBy: none
+		sourceColumn: service_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column contact_email
+		dataType: string
+		lineageTag: 6f0602a4-0450-491d-92f1-53639c1dc3e8
+		sourceLineageTag: contact_email
+		summarizeBy: none
+		sourceColumn: contact_email
+
+		annotation SummarizationSetBy = Automatic
+
+	column active_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: fe54f3fb-31c0-4b71-a001-51bba1f9d6a3
+		sourceLineageTag: active_flag
+		summarizeBy: sum
+		sourceColumn: active_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column effective_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5a441cbe-33bb-4dab-b441-bf9b7e36746a
+		sourceLineageTag: effective_date
+		summarizeBy: none
+		sourceColumn: effective_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column expiry_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 94491341-25c2-41e2-aa19-13296da2fa49
+		sourceLineageTag: expiry_date
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_current
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 82ca5a28-d5ec-4d5b-9286-4d1acd155ac7
+		sourceLineageTag: is_current
+		summarizeBy: none
+		sourceColumn: is_current
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 4cff0983-affc-4d6e-b902-8f9fea30cda6
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimcarrier = entity
+		mode: directLake
+		source
+			entityName: dimcarrier
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

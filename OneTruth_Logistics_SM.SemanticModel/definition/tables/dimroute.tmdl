@@ -1,0 +1,106 @@
+table dimroute
+	lineageTag: d42b7807-245d-4a28-8f5c-2351e5be9af6
+	sourceLineageTag: [dbo].[dimroute]
+
+	column route_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: bcc3580c-5670-4e89-a623-977f09868fa2
+		sourceLineageTag: route_sk
+		summarizeBy: none
+		sourceColumn: route_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_nk
+		dataType: string
+		isHidden
+		lineageTag: 41991e40-d655-4a28-bcee-7f56a4d5efb1
+		sourceLineageTag: route_nk
+		summarizeBy: none
+		sourceColumn: route_nk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_name
+		dataType: string
+		lineageTag: 56c97b92-b1c0-489b-b2d6-713ef00ca794
+		sourceLineageTag: route_name
+		summarizeBy: none
+		sourceColumn: route_name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_city
+		dataType: string
+		lineageTag: e8081494-77a3-4d1c-b9b3-a26fb482b9cc
+		sourceLineageTag: origin_city
+		summarizeBy: none
+		sourceColumn: origin_city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_city
+		dataType: string
+		lineageTag: 5e1e05f5-8916-4743-8397-460e31dcbfd1
+		sourceLineageTag: destination_city
+		summarizeBy: none
+		sourceColumn: destination_city
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column transport_mode
+		dataType: string
+		lineageTag: 93c0d79f-251d-42b1-90b7-1cdc632d7f82
+		sourceLineageTag: transport_mode
+		summarizeBy: none
+		sourceColumn: transport_mode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column standard_transit_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 5adcefd9-0806-42c0-951e-0c88303c8d98
+		sourceLineageTag: standard_transit_days
+		summarizeBy: none
+		sourceColumn: standard_transit_days
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: d2aa6ede-2fe9-4d8f-94cd-fd7a5a84f332
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimroute = entity
+		mode: directLake
+		source
+			entityName: dimroute
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+
+	changedProperty = IsHidden
+

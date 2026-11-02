@@ -50,6 +50,7 @@ SOURCE_FILES = {
     "procurement_inbound_receipts": "procurement_inbound_receipts.csv",
     "finance_freight_invoices":   "finance_freight_invoices.csv",
     "operations_exceptions":      "operations_exceptions.csv",
+    "accounts":                   "accounts.csv",
 }
 
 # ─── Cell 2: Ingest all files ─────────────────────────────────────────────────

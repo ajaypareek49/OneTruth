@@ -1,0 +1,170 @@
+table factinboundreceipt
+	lineageTag: ad875604-8277-4f5f-b7a7-c8648755d0ea
+	sourceLineageTag: [dbo].[factinboundreceipt]
+
+	column receipt_id
+		dataType: string
+		lineageTag: a170444e-c81b-4790-8fa3-b2e7fa2acb2e
+		sourceLineageTag: receipt_id
+		summarizeBy: none
+		sourceColumn: receipt_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 353cb853-8cd6-4d67-95f3-fa14c18d5397
+		sourceLineageTag: supplier_sk
+		summarizeBy: none
+		sourceColumn: supplier_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 532fe3a1-106c-448b-a445-600b5536a447
+		sourceLineageTag: product_sk
+		summarizeBy: sum
+		sourceColumn: product_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 37446683-0395-477c-b524-baa62af44bcc
+		sourceLineageTag: warehouse_sk
+		summarizeBy: none
+		sourceColumn: warehouse_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column receipt_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ede6539d-de26-4cc3-82c9-409e2ad73c21
+		sourceLineageTag: receipt_date_id
+		summarizeBy: none
+		sourceColumn: receipt_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column purchase_order_id
+		dataType: string
+		lineageTag: 0bb60719-edb3-4f36-8184-99856441757b
+		sourceLineageTag: purchase_order_id
+		summarizeBy: none
+		sourceColumn: purchase_order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_receipt_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5099e32a-b670-4746-a032-b0029584ca0e
+		sourceLineageTag: planned_receipt_date
+		summarizeBy: none
+		sourceColumn: planned_receipt_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_receipt_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1bdaa7d5-5cdd-412b-901b-6a68a6bb878e
+		sourceLineageTag: actual_receipt_date
+		summarizeBy: none
+		sourceColumn: actual_receipt_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: af9434e6-9d3b-420c-9f2b-b32fe0bcfd29
+		sourceLineageTag: planned_qty
+		summarizeBy: sum
+		sourceColumn: planned_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column received_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e9bdec2-274d-4b07-9cb8-dc45e59db3ab
+		sourceLineageTag: received_qty
+		summarizeBy: sum
+		sourceColumn: received_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column receipt_status
+		dataType: string
+		lineageTag: c2a9b69d-0187-4843-9db2-f4f58c2128ad
+		sourceLineageTag: receipt_status
+		summarizeBy: none
+		sourceColumn: receipt_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column quality_check_passed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bcc7258e-613a-41d5-891e-955315d7f5e3
+		sourceLineageTag: quality_check_passed
+		summarizeBy: none
+		sourceColumn: quality_check_passed
+
+		annotation SummarizationSetBy = Automatic
+
+	column receipt_variance_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 228d23f1-59d2-4300-b297-a70184dc805f
+		sourceLineageTag: receipt_variance_days
+		summarizeBy: sum
+		sourceColumn: receipt_variance_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_on_time_inbound
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8520cb21-30fa-49d8-8471-a6380bc2644c
+		sourceLineageTag: is_on_time_inbound
+		summarizeBy: none
+		sourceColumn: is_on_time_inbound
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: ea2b0f51-5d09-4b16-b04b-fe2dfcb818f3
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factinboundreceipt = entity
+		mode: directLake
+		source
+			entityName: factinboundreceipt
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

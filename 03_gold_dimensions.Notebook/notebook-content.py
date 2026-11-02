@@ -52,6 +52,10 @@ def write_gold(df, table_name: str):
     )
     print(f"✓ {GOLD}.dbo.{table_name}: {df.count():,} rows")
 
+# ─── Cell 1: DimAccounts ──────────────────────────────────────────────────────────
+dim_accounts_silver = spark.table(f"{SILVER}.dbo.dim_accounts_stg")
+write_gold(dim_accounts_silver, "DimAccounts")
+
 
 # ─── Cell 2: DimDate ──────────────────────────────────────────────────────────
 dim_date_silver = spark.table(f"{SILVER}.dbo.dim_date")

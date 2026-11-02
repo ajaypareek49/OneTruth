@@ -1,0 +1,93 @@
+table dimcustomer
+	lineageTag: c16df0e1-5d06-4e02-a0d0-389f9d7dcf74
+	sourceLineageTag: [dbo].[dimcustomer]
+
+	column customer_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 18769c3d-a817-4a0c-a712-789874c917a7
+		sourceLineageTag: customer_sk
+		summarizeBy: none
+		sourceColumn: customer_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_nk
+		dataType: string
+		isHidden
+		lineageTag: 34171880-3a8d-4aeb-bd78-5e61bcc687a9
+		sourceLineageTag: customer_nk
+		summarizeBy: none
+		sourceColumn: customer_nk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: 3c2a8167-3370-4b2c-acc7-6ba253c79715
+		sourceLineageTag: customer_name
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		lineageTag: 32f50172-b492-4c03-ad97-e0402bac2ca1
+		sourceLineageTag: segment
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 736861df-31eb-4a03-b957-02ba337fc6a2
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 6d227043-33ce-4032-aa54-e1c5f4d42900
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column credit_limit
+		dataType: double
+		lineageTag: 53ec0ef7-afad-41a1-90be-e5ee11297e4c
+		sourceLineageTag: credit_limit
+		summarizeBy: none
+		sourceColumn: credit_limit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 1ea56c1a-d783-4580-849c-804b6158aee7
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimcustomer = entity
+		mode: directLake
+		source
+			entityName: dimcustomer
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

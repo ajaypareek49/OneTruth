@@ -1,0 +1,155 @@
+table factwarehousetask
+	lineageTag: cc6874fc-0c70-405f-9659-1b9ccf874ca0
+	sourceLineageTag: [dbo].[factwarehousetask]
+
+	column task_id
+		dataType: string
+		lineageTag: 16a9cdea-c62d-4a8e-8103-1958027d19ac
+		sourceLineageTag: task_id
+		summarizeBy: none
+		sourceColumn: task_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 90e6e74b-038a-4324-ad0a-d62eb9c914fe
+		sourceLineageTag: warehouse_sk
+		summarizeBy: none
+		sourceColumn: warehouse_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 439b96e8-8f6d-4359-8fbd-83000919b6d4
+		sourceLineageTag: product_sk
+		summarizeBy: sum
+		sourceColumn: product_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a1433a9b-1a68-4264-a9c4-2eec34be42da
+		sourceLineageTag: task_date_id
+		summarizeBy: none
+		sourceColumn: task_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_type
+		dataType: string
+		lineageTag: e12c64af-2ce0-4244-8939-9e1aed6cee41
+		sourceLineageTag: task_type
+		summarizeBy: none
+		sourceColumn: task_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipment_id
+		dataType: string
+		lineageTag: b8535e27-ce1e-49bd-9d40-56c557760494
+		sourceLineageTag: shipment_id
+		summarizeBy: none
+		sourceColumn: shipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_start_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0584ba09-5b0b-448d-a048-3a6abca23e82
+		sourceLineageTag: planned_start_time
+		summarizeBy: none
+		sourceColumn: planned_start_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_start_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2b0ebf2c-977b-4c04-ba7e-04a2adf4c32a
+		sourceLineageTag: actual_start_time
+		summarizeBy: none
+		sourceColumn: actual_start_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_end_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 16407344-f894-462f-80d5-6bb424e4391a
+		sourceLineageTag: planned_end_time
+		summarizeBy: none
+		sourceColumn: planned_end_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_end_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fe115209-8f60-404d-ab09-7b33d472671d
+		sourceLineageTag: actual_end_time
+		summarizeBy: none
+		sourceColumn: actual_end_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column task_status
+		dataType: string
+		lineageTag: 59eb8631-66c5-4c30-86ea-7cbf46fecfa3
+		sourceLineageTag: task_status
+		summarizeBy: none
+		sourceColumn: task_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column operator_id
+		dataType: string
+		lineageTag: d54061bb-8fe3-494b-ba46-b2217c85eea7
+		sourceLineageTag: operator_id
+		summarizeBy: none
+		sourceColumn: operator_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_late_dispatch
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0e5dbb99-77c7-4a69-bccc-bc7c12a92a2e
+		sourceLineageTag: is_late_dispatch
+		summarizeBy: none
+		sourceColumn: is_late_dispatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 1f9620e4-6d80-41e7-b878-b9b7573bee3b
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factwarehousetask = entity
+		mode: directLake
+		source
+			entityName: factwarehousetask
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

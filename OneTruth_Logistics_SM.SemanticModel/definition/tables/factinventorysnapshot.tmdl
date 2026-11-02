@@ -1,0 +1,149 @@
+table factinventorysnapshot
+	lineageTag: 7e37ae4b-b6c7-4f00-9fa1-054fb52acff5
+	sourceLineageTag: [dbo].[factinventorysnapshot]
+
+	column snapshot_id
+		dataType: string
+		lineageTag: 924c005f-0d4e-4e44-b4fb-ad078bc1057c
+		sourceLineageTag: snapshot_id
+		summarizeBy: none
+		sourceColumn: snapshot_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0bad971b-2c4b-4ab3-9e14-1acdd1d48c5a
+		sourceLineageTag: warehouse_sk
+		summarizeBy: none
+		sourceColumn: warehouse_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bd0f7321-0bb7-4db1-8c00-a630d4b4a8b1
+		sourceLineageTag: product_sk
+		summarizeBy: none
+		sourceColumn: product_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1fd181be-55f7-4a43-a4ea-0b82904df186
+		sourceLineageTag: snapshot_date_id
+		summarizeBy: none
+		sourceColumn: snapshot_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ea1f72bc-75b0-472c-af59-e7f373325600
+		sourceLineageTag: snapshot_date
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column available_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: 18bdaa73-a787-479b-bc98-7d6235ff9436
+		sourceLineageTag: available_qty
+		summarizeBy: sum
+		sourceColumn: available_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserved_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: 23edd55c-37b4-4437-a6b0-3023f6760165
+		sourceLineageTag: reserved_qty
+		summarizeBy: sum
+		sourceColumn: reserved_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column in_transit_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b21ccb7-d71e-43c4-8807-411646410a16
+		sourceLineageTag: in_transit_qty
+		summarizeBy: sum
+		sourceColumn: in_transit_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column reorder_point
+		dataType: int64
+		formatString: 0
+		lineageTag: 70f57f28-e19d-4059-a6bb-74af73c5584c
+		sourceLineageTag: reorder_point
+		summarizeBy: sum
+		sourceColumn: reorder_point
+
+		annotation SummarizationSetBy = Automatic
+
+	column max_capacity
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c64e040-03c9-4289-80f9-38ba678ccf17
+		sourceLineageTag: max_capacity
+		summarizeBy: sum
+		sourceColumn: max_capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_available
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 61041579-502d-4574-b507-480587cd83bd
+		sourceLineageTag: is_available
+		summarizeBy: none
+		sourceColumn: is_available
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_below_reorder
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 81530e3c-2b8c-4b29-adee-39dbdf07f135
+		sourceLineageTag: is_below_reorder
+		summarizeBy: none
+		sourceColumn: is_below_reorder
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 5e58eea4-3fb4-4294-9924-f6ddd83c17c4
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factinventorysnapshot = entity
+		mode: directLake
+		source
+			entityName: factinventorysnapshot
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

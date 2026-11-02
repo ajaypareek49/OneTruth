@@ -1,0 +1,183 @@
+table dimdate
+	lineageTag: d48c8638-1d98-4df4-a7fb-f1434037d45a
+	sourceLineageTag: [dbo].[dimdate]
+
+	column date_key
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 09ad5db9-22ca-47a9-b594-ae3144b14e44
+		sourceLineageTag: date_key
+		summarizeBy: none
+		sourceColumn: date_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d15db71-c13d-41c6-b6a2-4a892d4a2ec0
+		sourceLineageTag: date_id
+		summarizeBy: none
+		sourceColumn: date_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b939542-731c-47f6-be8b-a72affef50ea
+		sourceLineageTag: year
+		summarizeBy: none
+		sourceColumn: year
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: fa311a7b-115c-4dae-9b42-5a195905f61c
+		sourceLineageTag: quarter
+		summarizeBy: none
+		sourceColumn: quarter
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column month_num
+		dataType: int64
+		formatString: 0
+		lineageTag: f25ce8fd-a66a-49cb-bed4-42cb7ee0b14b
+		sourceLineageTag: month_num
+		summarizeBy: none
+		sourceColumn: month_num
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column month_name
+		dataType: string
+		lineageTag: cbf2b037-b730-41f9-be57-054bd8635eda
+		sourceLineageTag: month_name
+		summarizeBy: none
+		sourceColumn: month_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_of_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 383d871e-600b-4908-a16f-722ad74357af
+		sourceLineageTag: week_of_year
+		summarizeBy: none
+		sourceColumn: week_of_year
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column day_of_week
+		dataType: int64
+		formatString: 0
+		lineageTag: 4db6de3f-68ee-4adc-a506-040f99a4c0b4
+		sourceLineageTag: day_of_week
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column day_name
+		dataType: string
+		lineageTag: 847fc68d-f2d2-49c9-9bcd-a357dc24840b
+		sourceLineageTag: day_name
+		summarizeBy: none
+		sourceColumn: day_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_weekday
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d59e8b1f-6dcc-4794-8abd-1ca2259b7b5c
+		sourceLineageTag: is_weekday
+		summarizeBy: none
+		sourceColumn: is_weekday
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscal_year
+		dataType: int64
+		formatString: 0
+		lineageTag: a672cbe7-9dd8-41b0-b6dc-00c2a558f6d6
+		sourceLineageTag: fiscal_year
+		summarizeBy: none
+		sourceColumn: fiscal_year
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column fiscal_quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: f3416d32-99e9-45d5-b661-a13bc7157e04
+		sourceLineageTag: fiscal_quarter
+		summarizeBy: none
+		sourceColumn: fiscal_quarter
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column year_month
+		dataType: string
+		lineageTag: 20554b94-8fa1-42cf-9f14-8ceff2e66fa7
+		sourceLineageTag: year_month
+		summarizeBy: none
+		sourceColumn: year_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column _silver_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 75236985-2fe7-4322-912b-11d2c79e3245
+		sourceLineageTag: _silver_processed_at
+		summarizeBy: none
+		sourceColumn: _silver_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 311c9278-cc45-4456-842f-278178d33471
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimdate = entity
+		mode: directLake
+		source
+			entityName: dimdate
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

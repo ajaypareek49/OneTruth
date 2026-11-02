@@ -1,0 +1,165 @@
+table Measure_tables
+	lineageTag: 3de044e5-6f02-40de-a76f-a899044b7e78
+
+	/// % of Delivered shipments where actual_delivery_date ≤ planned_delivery_date
+	measure 'On-Time Delivery %' =
+			VAR EligibleShipments =
+			    CALCULATE(
+			        COUNTROWS( FactShipment ),
+			        FactShipment[shipment_status] = "Delivered",
+			        NOT ISBLANK( FactShipment[actual_delivery_date] )
+			    )
+			VAR OnTimeShipments =
+			    CALCULATE(
+			        COUNTROWS( FactShipment ),
+			        FactShipment[shipment_status] = "Delivered",
+			        NOT ISBLANK( FactShipment[actual_delivery_date] ),
+			        FactShipment[is_on_time] = TRUE()
+			    )
+			RETURN
+			    IF(
+			        EligibleShipments > 0,
+			        DIVIDE( OnTimeShipments, EligibleShipments ),
+			        BLANK()
+			    )
+		displayFolder: Transportation
+		lineageTag: e52d34f0-5901-4e30-aac1-b044dd10161e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of invoice_amount_usd across all non-Disputed invoices
+	measure 'Total Freight Cost' =
+			CALCULATE(
+			    SUMX( FactFreightInvoice, FactFreightInvoice[invoice_amount_usd] ),
+			    FactFreightInvoice[invoice_status] <> "Disputed"
+			)
+		displayFolder: Transportation
+		lineageTag: ee895020-568b-4e67-ac67-f471aa7e656e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total Freight Cost divided by count of Delivered shipments with invoices
+	measure 'Freight Cost per Shipment' = ```
+			
+			VAR TotalCost = [Total Freight Cost]
+			VAR ShipmentCount =
+			    CALCULATE(
+			        DISTINCTCOUNT( FactFreightInvoice[shipment_id] ),
+			        FactFreightInvoice[invoice_status] <> "Disputed"
+			    )
+			RETURN
+			    DIVIDE( TotalCost, ShipmentCount )
+			
+			```
+		displayFolder: Transportation
+		lineageTag: 4e2db8a5-6a9e-48e7-93ce-8116777580f5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of orders with status = Delivered out of all non-Cancelled orders
+	measure 'Order Fulfilment Rate' =
+			
+			VAR EligibleOrders =
+			    CALCULATE(
+			        COUNTROWS( FactOrder ),
+			        FactOrder[order_status] <> "Cancelled"
+			    )
+			VAR FulfilledOrders =
+			    CALCULATE(
+			        COUNTROWS( FactOrder ),
+			        FactOrder[order_status] = "Delivered"
+			    )
+			RETURN
+			    DIVIDE( FulfilledOrders, EligibleOrders )
+		displayFolder: Order Fulfilment
+		lineageTag: 244518dc-eb0a-42e9-8e8e-4589c1fa4807
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of Dispatch tasks where actual_end_time > planned_end_time
+	measure 'Late Dispatch Rate' =
+			
+			VAR EligibleDispatch =
+			    CALCULATE(
+			        COUNTROWS( FactWarehouseTask ),
+			        FactWarehouseTask[task_type] = "Dispatch",
+			        FactWarehouseTask[task_status] = "Completed",
+			        NOT ISBLANK( FactWarehouseTask[actual_end_time] )
+			    )
+			VAR LateDispatch =
+			    CALCULATE(
+			        COUNTROWS( FactWarehouseTask ),
+			        FactWarehouseTask[task_type] = "Dispatch",
+			        FactWarehouseTask[task_status] = "Completed",
+			        NOT ISBLANK( FactWarehouseTask[actual_end_time] ),
+			        FactWarehouseTask[is_late_dispatch] = TRUE()
+			    )
+			RETURN
+			    DIVIDE( LateDispatch, EligibleDispatch )
+		displayFolder: Warehouse
+		lineageTag: 2c6028b2-7cbe-4cbb-826f-7f2cd4ae8698
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of product-warehouse-date snapshots where available_qty > 0
+	measure 'Inventory Availability %' =
+			
+			VAR TotalSnapshots =
+			    COUNTROWS( FactInventorySnapshot )
+			VAR AvailableSnapshots =
+			    CALCULATE(
+			        COUNTROWS( FactInventorySnapshot ),
+			        FactInventorySnapshot[is_available] = TRUE()
+			    )
+			RETURN
+			    DIVIDE( AvailableSnapshots, TotalSnapshots )
+		displayFolder: Inventory
+		lineageTag: f5a4b798-9636-4f84-9a9b-2c35c7bafb66
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of Received inbound receipts where actual_receipt_date ≤ planned_receipt_date
+	measure 'Supplier On-Time Inbound %' =
+			
+			VAR EligibleReceipts =
+			    CALCULATE(
+			        COUNTROWS( FactInboundReceipt ),
+			        FactInboundReceipt[receipt_status] = "Received"
+			    )
+			VAR OnTimeReceipts =
+			    CALCULATE(
+			        COUNTROWS( FactInboundReceipt ),
+			        FactInboundReceipt[receipt_status] = "Received",
+			        FactInboundReceipt[is_on_time_inbound] = TRUE()
+			    )
+			RETURN
+			    DIVIDE( OnTimeReceipts, EligibleReceipts )
+		displayFolder: Supplier
+		lineageTag: 548f3fe9-c420-4f12-85e7-6917f1396996
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Count of exception records with High or Medium severity, status <> Resolved
+	measure 'Exception Count' =
+			
+			CALCULATE(
+			    COUNTROWS( FactException ),
+			    FactException[severity] IN { "High", "Medium" },
+			    // FactException[status] <> "Resolved"
+			     KEEPFILTERS( FactException[status] <> "Resolved" )
+			)
+		formatString: 0
+		displayFolder: Operations
+		lineageTag: 401a6f31-ca7d-47d1-84b1-7a66d6d7b0e7
+
+	partition Measure_tables = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column = _t]),
+				  #"Removed Columns" = Table.RemoveColumns(Source, {"Column"})
+				in
+				  #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

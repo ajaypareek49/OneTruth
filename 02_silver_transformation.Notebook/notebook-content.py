@@ -383,6 +383,19 @@ exc_silver = (
 
 write_silver(exc_silver, "fact_exception_stg")
 
+# ─── Cell 15: Accounts (silver) ─────────────────────────────────────────────
+exc_bronze = spark.table(f"{BRONZE}.dbo.accounts")
+
+exc_silver = (
+    exc_bronze
+    .withColumn("account",         F.trim(F.upper(F.col("account"))))
+    .withColumn("email",       F.trim(F.col("email")))
+    .withColumn("region",  F.trim(F.col("region")))
+    .dropDuplicates(["account"])
+)
+
+write_silver(exc_silver, "dim_accounts_stg")
+
 print("\n=== Silver transformation complete ===")
 
 # METADATA ********************

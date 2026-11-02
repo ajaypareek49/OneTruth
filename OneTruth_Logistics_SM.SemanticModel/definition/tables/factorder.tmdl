@@ -1,0 +1,118 @@
+table factorder
+	lineageTag: 1a22c977-79f6-4b60-90ad-fe90764a16f4
+	sourceLineageTag: [dbo].[factorder]
+
+	column order_id
+		dataType: string
+		lineageTag: ba4f1a78-172d-46ab-b5e4-8c0b8904c426
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 610d7670-a6b6-4881-9189-a089bf130eed
+		sourceLineageTag: customer_sk
+		summarizeBy: none
+		sourceColumn: customer_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fulfillment_warehouse_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6d97dbb6-e876-4776-b02b-2be77e19eaf3
+		sourceLineageTag: fulfillment_warehouse_sk
+		summarizeBy: sum
+		sourceColumn: fulfillment_warehouse_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3941815a-404e-4f40-9854-5ef234fe8f5f
+		sourceLineageTag: order_date_id
+		summarizeBy: none
+		sourceColumn: order_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8e797715-abf2-48ce-8b62-59cd2d7a31e2
+		sourceLineageTag: order_date
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column required_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4e730fac-8eb6-4f70-b3e8-b961b4d891d0
+		sourceLineageTag: required_delivery_date
+		summarizeBy: none
+		sourceColumn: required_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_status
+		dataType: string
+		lineageTag: f2fa0e9e-66f2-4637-a1b4-1fb383c532f4
+		sourceLineageTag: order_status
+		summarizeBy: none
+		sourceColumn: order_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_channel
+		dataType: string
+		lineageTag: 2521c94d-bb3a-4a6e-8691-1bfb634a4b8e
+		sourceLineageTag: order_channel
+		summarizeBy: none
+		sourceColumn: order_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_order_value_usd
+		dataType: double
+		lineageTag: cb145f3f-89b2-4daa-a374-a55a960e7dec
+		sourceLineageTag: total_order_value_usd
+		summarizeBy: sum
+		sourceColumn: total_order_value_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: a86dc8ed-f381-4349-893c-8769e40a1752
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factorder = entity
+		mode: directLake
+		source
+			entityName: factorder
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

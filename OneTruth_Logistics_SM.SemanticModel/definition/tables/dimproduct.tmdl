@@ -1,0 +1,105 @@
+table dimproduct
+	lineageTag: 55500138-4c4a-4ec3-ab33-3554bff70c25
+	sourceLineageTag: [dbo].[dimproduct]
+
+	column product_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 71abe399-1620-4504-9b56-130fbef8d7ed
+		sourceLineageTag: product_sk
+		summarizeBy: none
+		sourceColumn: product_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_nk
+		dataType: string
+		isHidden
+		lineageTag: 6483266b-8978-4675-baf0-3c5492124d3e
+		sourceLineageTag: product_nk
+		summarizeBy: none
+		sourceColumn: product_nk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: 92f0367a-2a3a-4a4d-ba5c-851e45872552
+		sourceLineageTag: product_name
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: ac726e13-a9b3-4f0a-8f0f-ec60afad2022
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column brand
+		dataType: string
+		lineageTag: 18448247-e0ba-4084-8410-a03dfe55f95b
+		sourceLineageTag: brand
+		summarizeBy: none
+		sourceColumn: brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_weight_kg
+		dataType: double
+		lineageTag: 0f8dac16-d804-431f-a4da-d13a5a8da1e2
+		sourceLineageTag: unit_weight_kg
+		summarizeBy: none
+		sourceColumn: unit_weight_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unit_cost_usd
+		dataType: double
+		lineageTag: 6ef6e99e-3f5f-4176-b7af-04d3a9fcd4d2
+		sourceLineageTag: unit_cost_usd
+		summarizeBy: none
+		sourceColumn: unit_cost_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lead_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 82f98228-1c25-4dcf-be32-146c3b64d9b2
+		sourceLineageTag: lead_time_days
+		summarizeBy: none
+		sourceColumn: lead_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: b88b2eca-c0ec-4246-9960-f3004d1fb1ef
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimproduct = entity
+		mode: directLake
+		source
+			entityName: dimproduct
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

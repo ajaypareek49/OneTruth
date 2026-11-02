@@ -1,0 +1,86 @@
+table dimaccounts
+	lineageTag: 0c7c2561-f897-466a-adcb-20ee6e77179b
+	sourceLineageTag: [dbo].[dimaccounts]
+
+	column account
+		dataType: string
+		lineageTag: 60436ecd-1504-4f46-bd5d-cdb9474cbe1e
+		sourceLineageTag: account
+		summarizeBy: none
+		sourceColumn: account
+
+		annotation SummarizationSetBy = Automatic
+
+	column email
+		dataType: string
+		lineageTag: 5238c9a1-4bbf-428f-b067-10fa81c8debb
+		sourceLineageTag: email
+		summarizeBy: none
+		sourceColumn: email
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 036ce4b3-4566-4cd6-8e93-a1b7e0a49504
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ingested_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3c0b1901-54d3-4014-ac24-dbe94978ed60
+		sourceLineageTag: _ingested_at
+		summarizeBy: none
+		sourceColumn: _ingested_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_file
+		dataType: string
+		lineageTag: db35c156-f9a9-4a99-ae4c-0addb9fa05c5
+		sourceLineageTag: _source_file
+		summarizeBy: none
+		sourceColumn: _source_file
+
+		annotation SummarizationSetBy = Automatic
+
+	column _source_system
+		dataType: string
+		lineageTag: c55f79f3-0af0-4af6-aeae-590d1fa6af8a
+		sourceLineageTag: _source_system
+		summarizeBy: none
+		sourceColumn: _source_system
+
+		annotation SummarizationSetBy = Automatic
+
+	column _silver_processed_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 24d6674f-b476-4775-9c24-5250563c26a3
+		sourceLineageTag: _silver_processed_at
+		summarizeBy: none
+		sourceColumn: _silver_processed_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6c80f68a-ca04-41f5-9e53-f4a3a4e178e4
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimaccounts = entity
+		mode: directLake
+		source
+			entityName: dimaccounts
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+
