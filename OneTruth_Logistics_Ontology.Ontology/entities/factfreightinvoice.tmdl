@@ -1,0 +1,99 @@
+/// A financial record issued by a carrier for transportation or logistics services rendered, associated with a specific shipment.
+entity factfreightinvoice
+	lineageTag: 9bf7eea5-efae-4bcf-96e9-a32ffd75b882
+	backingTable: factfreightinvoice
+
+	property invoice_id
+		dataType: string
+		lineageTag: 6355a5c2-449b-4ebb-ba5b-1db4cef697f7
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.invoice_id
+
+	property shipment_id
+		dataType: string
+		lineageTag: 815080d8-9f99-42d1-b561-bde72eee621f
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.shipment_id
+
+	property carrier_sk
+		dataType: int64
+		lineageTag: 5f2fe2bc-9be3-443a-ab80-bd3e49001131
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.carrier_sk
+
+	property cost_type_sk
+		dataType: int64
+		lineageTag: af3dc352-9cf0-4e31-b8a0-3ba7c5a40f60
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.cost_type_sk
+
+	property invoice_date_id
+		dataType: int64
+		lineageTag: 5e2fda15-850f-4481-a2cf-99cfc171a4dc
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.invoice_date_id
+
+	property invoice_date
+		dataType: dateTime
+		lineageTag: 16d1186b-8a55-4714-a24a-df8510976b2d
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.invoice_date
+
+	property invoice_amount_usd
+		dataType: double
+		lineageTag: 2dcc268c-b6ae-4c25-a503-f5d76ee37445
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.invoice_amount_usd
+
+	property base_freight_usd
+		dataType: double
+		lineageTag: 542bdcf5-e980-4cde-bc43-72744095267c
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.base_freight_usd
+
+	property fuel_surcharge_usd
+		dataType: double
+		lineageTag: 65fb03b3-221f-4fec-a895-d098cb3e6a85
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.fuel_surcharge_usd
+
+	property accessorial_usd
+		dataType: double
+		lineageTag: a2760ff8-af2e-448c-8d50-ef33b31fe42d
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.accessorial_usd
+
+	property invoice_status
+		dataType: string
+		lineageTag: d23bb6e4-b1ef-4dc3-9103-351ece5de805
+
+		backingConfiguration
+			valueColumn: factfreightinvoice.invoice_status
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: 8d0a705c-0747-473d-8e92-7259dcab0552
+
+		backingConfiguration
+			valueColumn: factfreightinvoice._gold_processed_at
+
+	synonym 'freight bill'
+
+	synonym 'carrier invoice'
+
+	synonym 'transport invoice'
+
+	synonym 'logistics invoice'
+
+	synonym 'freight charge'
+

@@ -1,0 +1,9 @@
+expression 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/WORKSPACE_NAME_PLACEHOLDER", "OneTruth_Logistics_SM"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 33cefe6a-ccca-4c51-a6be-e41bf3f32bf1
+

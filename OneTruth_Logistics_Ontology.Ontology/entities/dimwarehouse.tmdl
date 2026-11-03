@@ -1,0 +1,70 @@
+/// A physical facility that receives, stores, processes, or dispatches inventory for the supply chain.
+entity dimwarehouse
+	lineageTag: 0d6f8765-48fd-431a-a3b7-c4d6e3827a08
+	backingTable: dimwarehouse
+
+	property warehouse_nk
+		dataType: string
+		lineageTag: b988d488-44ae-4b70-8efd-fea5e20f9afd
+
+		backingConfiguration
+			valueColumn: dimwarehouse.warehouse_nk
+
+	property warehouse_name
+		dataType: string
+		lineageTag: 560d9a75-dbad-4148-9477-42072bbb02f1
+
+		backingConfiguration
+			valueColumn: dimwarehouse.warehouse_name
+
+	property city
+		dataType: string
+		lineageTag: 375cc6e7-b90a-4eea-afc1-499a9c4b92b3
+
+		backingConfiguration
+			valueColumn: dimwarehouse.city
+
+	property region
+		dataType: string
+		lineageTag: 119745ff-8278-4647-af41-33194c4cf13b
+
+		backingConfiguration
+			valueColumn: dimwarehouse.region
+
+	property facility_type
+		dataType: string
+		lineageTag: f4510582-8e5a-408c-a8ce-502b5fe172a0
+
+		backingConfiguration
+			valueColumn: dimwarehouse.facility_type
+
+	property warehouse_sk
+		dataType: int64
+		lineageTag: 5570f819-0b9d-4613-b13d-99b7b9ec025f
+
+		backingConfiguration
+			valueColumn: dimwarehouse.warehouse_sk
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: c8c5cb80-0fcc-4e34-910f-63ec2ffba28b
+
+		backingConfiguration
+			valueColumn: dimwarehouse._gold_processed_at
+
+	synonym DC
+
+	synonym 'distribution centre'
+
+	synonym 'distribution center'
+
+	synonym 'fulfillment centre'
+
+	synonym 'fulfillment center'
+
+	synonym depot
+
+	synonym hub
+
+	synonym facility
+

@@ -1,0 +1,64 @@
+table dimwarehouse
+	lineageTag: 47e51370-fb52-422b-ad52-dad418d030e7
+	sourceLineageTag: d0a3835d-961f-4796-ad3a-f168488eb666
+
+	column warehouse_nk
+		dataType: string
+		lineageTag: b988d488-44ae-4b70-8efd-fea5e20f9afd
+		sourceLineageTag: e42a8c04-1d78-4507-b083-fe6425f643f1
+		sourceColumn: warehouse_nk
+
+	column warehouse_name
+		dataType: string
+		lineageTag: 560d9a75-dbad-4148-9477-42072bbb02f1
+		sourceLineageTag: c828db12-0a6d-46cc-8850-60d4d7836a68
+		sourceColumn: warehouse_name
+
+	column city
+		dataType: string
+		lineageTag: 375cc6e7-b90a-4eea-afc1-499a9c4b92b3
+		sourceLineageTag: 65ff6639-1573-4f78-bf53-2483d9d2e7d0
+		sourceColumn: city
+
+	column region
+		dataType: string
+		lineageTag: 119745ff-8278-4647-af41-33194c4cf13b
+		sourceLineageTag: d79a2225-a94f-4cdc-a351-1a80261d8141
+		sourceColumn: region
+
+	column facility_type
+		dataType: string
+		lineageTag: f4510582-8e5a-408c-a8ce-502b5fe172a0
+		sourceLineageTag: eb86021b-bce6-4f17-b781-8e167d921e13
+		sourceColumn: facility_type
+
+	column warehouse_sk
+		dataType: int64
+		lineageTag: 5570f819-0b9d-4613-b13d-99b7b9ec025f
+		sourceLineageTag: 232d9cfe-39e4-4490-a563-2e8460903193
+		sourceColumn: warehouse_sk
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: c8c5cb80-0fcc-4e34-910f-63ec2ffba28b
+		sourceLineageTag: 21340740-8b9e-4383-af7f-ff9527fb3e47
+		sourceColumn: _gold_processed_at
+
+	partition dimwarehouse-partition = entity
+		mode: directQuery
+		source
+			entityName: dimwarehouse
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

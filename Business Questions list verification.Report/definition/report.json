@@ -1,0 +1,131 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.4.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Fluent2-CY26SU11",
+      "reportVersionAtImport": {
+        "visual": "2.14.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "OneTruthFabric.json",
+      "reportVersionAtImport": {
+        "visual": "2.14.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "bg_home.png",
+          "path": "bg_home.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q01.png",
+          "path": "bg_q01.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q02.png",
+          "path": "bg_q02.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q03.png",
+          "path": "bg_q03.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q04.png",
+          "path": "bg_q04.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q05.png",
+          "path": "bg_q05.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q06.png",
+          "path": "bg_q06.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q07.png",
+          "path": "bg_q07.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q08.png",
+          "path": "bg_q08.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q09.png",
+          "path": "bg_q09.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_q10.png",
+          "path": "bg_q10.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg_rls.png",
+          "path": "bg_rls.png",
+          "type": "Image"
+        },
+        {
+          "name": "OneTruthFabric.json",
+          "path": "OneTruthFabric.json",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU11",
+          "path": "BaseThemes/Fluent2-CY26SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  },
+  "linguisticSchemaSyncVersion": 0
+}

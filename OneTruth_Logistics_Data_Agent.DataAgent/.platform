@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataAgent",
+    "displayName": "OneTruth_Logistics_Data_Agent"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "301e42e6-5fcd-bbff-4f1e-5c6f4ee7af80"
+  }
+}

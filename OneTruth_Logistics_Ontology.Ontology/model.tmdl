@@ -1,0 +1,33 @@
+model Model
+
+ref table dimcarrier
+ref table dimcosttype
+ref table dimcustomer
+ref table dimdate
+ref table dimproduct
+ref table dimroute
+ref table dimsupplier
+ref table dimwarehouse
+ref table factexception
+ref table factfreightinvoice
+ref table factinboundreceipt
+ref table factinventorysnapshot
+ref table factorder
+ref table factshipment
+ref table factwarehousetask
+ref table Measure_tables
+
+ref entity factshipment
+ref entity factorder
+ref entity dimcarrier
+ref entity dimroute
+ref entity dimwarehouse
+ref entity dimproduct
+ref entity dimcustomer
+ref entity dimsupplier
+ref entity factinventorysnapshot
+ref entity factfreightinvoice
+ref entity factexception
+
+ref namespace default
+

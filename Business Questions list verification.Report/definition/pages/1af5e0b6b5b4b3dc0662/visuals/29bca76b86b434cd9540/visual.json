@@ -1,0 +1,264 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "29bca76b86b434cd9540",
+  "position": {
+    "x": 600.2744930795177,
+    "y": 392.590237661381,
+    "z": 1000,
+    "height": 251.90090334586904,
+    "width": 507.82150195789558,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimproduct"
+                    }
+                  },
+                  "Property": "product_name"
+                }
+              },
+              "queryRef": "dimproduct.product_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimwarehouse"
+                    }
+                  },
+                  "Property": "warehouse_name"
+                }
+              },
+              "queryRef": "dimwarehouse.warehouse_name",
+              "nativeQueryRef": "warehouse_name"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "dimproduct"
+                  }
+                },
+                "Property": "product_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Out of stock (available qty = 0)'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "424ce9b676285d1ebda4",
+        "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measure_tables"
+              }
+            },
+            "Property": "Inventory Availability %"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "af1c14904d25a637a704",
+        "ordinal": 1,
+        "type": "Passthrough",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "fs",
+              "Entity": "factinventorysnapshot",
+              "Type": 0
+            },
+            {
+              "Name": "p",
+              "Entity": "dimproduct",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Exists": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "fs"
+                    }
+                  }
+                }
+              },
+              "Target": [
+                {
+                  "SourceRef": {
+                    "Source": "p"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "restatement": "Product sk that have factinventorysnapshots",
+        "howCreated": "User",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "531143e19869cc2821a1",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "factinventorysnapshot"
+              }
+            },
+            "Property": "available_qty"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "factinventorysnapshot",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "available_qty"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "0L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "c607efebdd2e2549ba7e",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dimproduct"
+              }
+            },
+            "Property": "product_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "howCreated": "Copilot"
+}

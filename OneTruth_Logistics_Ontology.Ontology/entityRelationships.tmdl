@@ -1,0 +1,10 @@
+/// A customer submits or receives an order.
+entityRelationship factorder_to_dimcustomer
+	label: factorder_to_dimcustomer
+	lineageTag: 1bdc3e40-9047-4a4f-9393-01884bac41f0
+	fromEntity: factorder
+	toEntity: dimcustomer
+
+	backingConfiguration
+		relationship: factorder_to_dimcustomer
+

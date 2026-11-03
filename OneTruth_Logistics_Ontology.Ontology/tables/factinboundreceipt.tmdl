@@ -1,0 +1,112 @@
+table factinboundreceipt
+	lineageTag: 2845b921-3057-4e0e-94e8-c2cae8e171a5
+	sourceLineageTag: ad875604-8277-4f5f-b7a7-c8648755d0ea
+
+	column receipt_id
+		dataType: string
+		lineageTag: 4981850d-0cc1-4315-8246-54e8838af037
+		sourceLineageTag: a170444e-c81b-4790-8fa3-b2e7fa2acb2e
+		sourceColumn: receipt_id
+
+	column supplier_sk
+		dataType: int64
+		lineageTag: 6c8e1838-66f9-4c05-a0e9-fa8634f8ce96
+		sourceLineageTag: 353cb853-8cd6-4d67-95f3-fa14c18d5397
+		sourceColumn: supplier_sk
+
+	column product_sk
+		dataType: int64
+		lineageTag: ea27d9e7-3472-49f6-8a95-933bb0f5c604
+		sourceLineageTag: 532fe3a1-106c-448b-a445-600b5536a447
+		sourceColumn: product_sk
+
+	column warehouse_sk
+		dataType: int64
+		lineageTag: cc283099-48a1-4c4f-8f6b-8c0d486281b6
+		sourceLineageTag: 37446683-0395-477c-b524-baa62af44bcc
+		sourceColumn: warehouse_sk
+
+	column receipt_date_id
+		dataType: int64
+		lineageTag: 9bf98d1c-6004-43e6-a6b8-87e1116995fa
+		sourceLineageTag: ede6539d-de26-4cc3-82c9-409e2ad73c21
+		sourceColumn: receipt_date_id
+
+	column purchase_order_id
+		dataType: string
+		lineageTag: 017daab8-5e79-46cf-b0c8-8b6459b8a9be
+		sourceLineageTag: 0bb60719-edb3-4f36-8184-99856441757b
+		sourceColumn: purchase_order_id
+
+	column planned_receipt_date
+		dataType: dateTime
+		lineageTag: 13cc4ed0-9381-40b8-b7c4-9d283e6d17ec
+		sourceLineageTag: 5099e32a-b670-4746-a032-b0029584ca0e
+		sourceColumn: planned_receipt_date
+
+	column actual_receipt_date
+		dataType: dateTime
+		lineageTag: 203419c7-a9d2-461c-a6c8-b2641424b638
+		sourceLineageTag: 1bdaa7d5-5cdd-412b-901b-6a68a6bb878e
+		sourceColumn: actual_receipt_date
+
+	column planned_qty
+		dataType: int64
+		lineageTag: 4bb48312-423b-4034-957c-b7e857787b28
+		sourceLineageTag: af9434e6-9d3b-420c-9f2b-b32fe0bcfd29
+		sourceColumn: planned_qty
+
+	column received_qty
+		dataType: int64
+		lineageTag: 21122244-83f2-411a-a225-a834c4cea709
+		sourceLineageTag: 9e9bdec2-274d-4b07-9cb8-dc45e59db3ab
+		sourceColumn: received_qty
+
+	column receipt_status
+		dataType: string
+		lineageTag: fcb18156-0453-4d2c-b928-d2d73df9013c
+		sourceLineageTag: c2a9b69d-0187-4843-9db2-f4f58c2128ad
+		sourceColumn: receipt_status
+
+	column quality_check_passed
+		dataType: boolean
+		lineageTag: c0a95b0e-10bd-41c6-b7e3-356686b4209d
+		sourceLineageTag: bcc7258e-613a-41d5-891e-955315d7f5e3
+		sourceColumn: quality_check_passed
+
+	column receipt_variance_days
+		dataType: int64
+		lineageTag: 06606faf-4af0-4d05-89cc-1f6cf2b3f467
+		sourceLineageTag: 228d23f1-59d2-4300-b297-a70184dc805f
+		sourceColumn: receipt_variance_days
+
+	column is_on_time_inbound
+		dataType: boolean
+		lineageTag: 758a920b-3890-4bcf-9ae7-5e8b1c5efc47
+		sourceLineageTag: 8520cb21-30fa-49d8-8471-a6380bc2644c
+		sourceColumn: is_on_time_inbound
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: 01c683ce-5863-4084-b6d8-219ad441e386
+		sourceLineageTag: ea2b0f51-5d09-4b16-b04b-fe2dfcb818f3
+		sourceColumn: _gold_processed_at
+
+	partition factinboundreceipt-partition = entity
+		mode: directQuery
+		source
+			entityName: factinboundreceipt
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

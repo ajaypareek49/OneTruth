@@ -1,0 +1,82 @@
+table factorder
+	lineageTag: d5491758-a26e-4274-b2d3-92505d0a3745
+	sourceLineageTag: 1a22c977-79f6-4b60-90ad-fe90764a16f4
+
+	column order_id
+		dataType: string
+		lineageTag: b3bd4d5a-009a-4c7c-92c6-f00e61540b3c
+		sourceLineageTag: ba4f1a78-172d-46ab-b5e4-8c0b8904c426
+		sourceColumn: order_id
+
+	column customer_sk
+		dataType: int64
+		lineageTag: 59c196ab-4a07-4fa7-af70-f200d8a32365
+		sourceLineageTag: 610d7670-a6b6-4881-9189-a089bf130eed
+		sourceColumn: customer_sk
+
+	column fulfillment_warehouse_sk
+		dataType: int64
+		lineageTag: ae061971-4883-4c8b-9165-35f5651011c7
+		sourceLineageTag: 6d97dbb6-e876-4776-b02b-2be77e19eaf3
+		sourceColumn: fulfillment_warehouse_sk
+
+	column order_date_id
+		dataType: int64
+		lineageTag: e173462b-ea82-4212-8e1d-42d510631f90
+		sourceLineageTag: 3941815a-404e-4f40-9854-5ef234fe8f5f
+		sourceColumn: order_date_id
+
+	column order_date
+		dataType: dateTime
+		lineageTag: e41309ec-0c06-496c-8dc5-a0c4a5ae4673
+		sourceLineageTag: 8e797715-abf2-48ce-8b62-59cd2d7a31e2
+		sourceColumn: order_date
+
+	column required_delivery_date
+		dataType: dateTime
+		lineageTag: 356c0d98-c4fd-4056-a7e8-3d2030c3b615
+		sourceLineageTag: 4e730fac-8eb6-4f70-b3e8-b961b4d891d0
+		sourceColumn: required_delivery_date
+
+	column order_status
+		dataType: string
+		lineageTag: 47ff9571-f092-4113-ad32-62aa75a751af
+		sourceLineageTag: f2fa0e9e-66f2-4637-a1b4-1fb383c532f4
+		sourceColumn: order_status
+
+	column order_channel
+		dataType: string
+		lineageTag: 592745b1-3e0f-4093-95a3-12eafb2f63cc
+		sourceLineageTag: 2521c94d-bb3a-4a6e-8691-1bfb634a4b8e
+		sourceColumn: order_channel
+
+	column total_order_value_usd
+		dataType: double
+		lineageTag: 378d3d23-3a30-4c25-a4b7-16b76d30e905
+		sourceLineageTag: cb145f3f-89b2-4daa-a374-a55a960e7dec
+		sourceColumn: total_order_value_usd
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: 93a3d792-aa33-4de9-be67-bdf24a5f17ea
+		sourceLineageTag: a86dc8ed-f381-4349-893c-8769e40a1752
+		sourceColumn: _gold_processed_at
+
+	partition factorder-partition = entity
+		mode: directQuery
+		source
+			entityName: factorder
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

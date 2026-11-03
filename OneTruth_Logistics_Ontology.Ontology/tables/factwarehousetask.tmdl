@@ -1,0 +1,106 @@
+table factwarehousetask
+	lineageTag: 9d36982c-ab41-4ba0-9870-06ebd0588dd0
+	sourceLineageTag: cc6874fc-0c70-405f-9659-1b9ccf874ca0
+
+	column task_id
+		dataType: string
+		lineageTag: 6a64f469-d28c-4981-9122-06764dfc49f7
+		sourceLineageTag: 16a9cdea-c62d-4a8e-8103-1958027d19ac
+		sourceColumn: task_id
+
+	column warehouse_sk
+		dataType: int64
+		lineageTag: 62a17f2e-f12a-4a53-948a-e9fd01e3fe08
+		sourceLineageTag: 90e6e74b-038a-4324-ad0a-d62eb9c914fe
+		sourceColumn: warehouse_sk
+
+	column product_sk
+		dataType: int64
+		lineageTag: 55718ee8-d746-474d-b9e4-d495987a080b
+		sourceLineageTag: 439b96e8-8f6d-4359-8fbd-83000919b6d4
+		sourceColumn: product_sk
+
+	column task_date_id
+		dataType: int64
+		lineageTag: 8dac667f-3b4c-458c-89a5-33342d23e673
+		sourceLineageTag: a1433a9b-1a68-4264-a9c4-2eec34be42da
+		sourceColumn: task_date_id
+
+	column task_type
+		dataType: string
+		lineageTag: 6dea5484-70ab-4953-a15f-e5b3e90d53de
+		sourceLineageTag: e12c64af-2ce0-4244-8939-9e1aed6cee41
+		sourceColumn: task_type
+
+	column shipment_id
+		dataType: string
+		lineageTag: 095268fe-6f7e-4ddd-b734-48bb626c057d
+		sourceLineageTag: b8535e27-ce1e-49bd-9d40-56c557760494
+		sourceColumn: shipment_id
+
+	column planned_start_time
+		dataType: dateTime
+		lineageTag: db49d476-fa2b-4c26-840e-b1265c2c0bfc
+		sourceLineageTag: 0584ba09-5b0b-448d-a048-3a6abca23e82
+		sourceColumn: planned_start_time
+
+	column actual_start_time
+		dataType: dateTime
+		lineageTag: 96f3d757-af82-46cd-acea-4a662956c27c
+		sourceLineageTag: 2b0ebf2c-977b-4c04-ba7e-04a2adf4c32a
+		sourceColumn: actual_start_time
+
+	column planned_end_time
+		dataType: dateTime
+		lineageTag: fab4f4be-3e77-495b-aef9-95bb822732e8
+		sourceLineageTag: 16407344-f894-462f-80d5-6bb424e4391a
+		sourceColumn: planned_end_time
+
+	column actual_end_time
+		dataType: dateTime
+		lineageTag: 560ea670-23ea-42c5-8fec-34ce2bd9f2b2
+		sourceLineageTag: fe115209-8f60-404d-ab09-7b33d472671d
+		sourceColumn: actual_end_time
+
+	column task_status
+		dataType: string
+		lineageTag: b07b07b6-10ba-4605-b759-d61f2b4d6856
+		sourceLineageTag: 59eb8631-66c5-4c30-86ea-7cbf46fecfa3
+		sourceColumn: task_status
+
+	column operator_id
+		dataType: string
+		lineageTag: f323a96d-72c6-4ff8-b529-5555770136db
+		sourceLineageTag: d54061bb-8fe3-494b-ba46-b2217c85eea7
+		sourceColumn: operator_id
+
+	column is_late_dispatch
+		dataType: boolean
+		lineageTag: d11e901b-1e9f-47fb-ba8b-0c95578f239e
+		sourceLineageTag: 0e5dbb99-77c7-4a69-bccc-bc7c12a92a2e
+		sourceColumn: is_late_dispatch
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: e046714a-d03e-4005-9f7f-afb97b956d63
+		sourceLineageTag: 1f9620e4-6d80-41e7-b878-b9b7573bee3b
+		sourceColumn: _gold_processed_at
+
+	partition factwarehousetask-partition = entity
+		mode: directQuery
+		source
+			entityName: factwarehousetask
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

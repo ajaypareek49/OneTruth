@@ -1,0 +1,108 @@
+/// The quantity of a product available, reserved, and in-transit at a specific warehouse at a stated point in time.
+entity factinventorysnapshot
+	lineageTag: c3645b8d-3dd4-4601-a73d-4f6cd22980b9
+	backingTable: factinventorysnapshot
+
+	property snapshot_id
+		dataType: string
+		lineageTag: 2c5c51b6-f697-4d3b-8ff0-14f5c89f5dbd
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.snapshot_id
+
+	property warehouse_sk
+		dataType: int64
+		lineageTag: e95fa8a0-3b4f-4b59-b2aa-d9a61c50b257
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.warehouse_sk
+
+	property product_sk
+		dataType: int64
+		lineageTag: deae2bc6-f38b-4900-bd46-f3ec394c6d84
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.product_sk
+
+	property snapshot_date_id
+		dataType: int64
+		lineageTag: 65ca7321-4e78-453f-a8f7-cfdf8a7a3e87
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.snapshot_date_id
+
+	property snapshot_date
+		dataType: dateTime
+		lineageTag: ce08bcf1-560f-4375-8941-0f741da2c943
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.snapshot_date
+
+	property available_qty
+		dataType: int64
+		lineageTag: 396537eb-cb2a-49cf-a83a-54480ccd525a
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.available_qty
+
+	property reserved_qty
+		dataType: int64
+		lineageTag: 3d1c84fa-728b-4e95-977d-94b221b7fd0c
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.reserved_qty
+
+	property in_transit_qty
+		dataType: int64
+		lineageTag: 9b963bc0-5b44-4054-9f1e-106bb3319576
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.in_transit_qty
+
+	property reorder_point
+		dataType: int64
+		lineageTag: 861d781b-fd9f-48b1-85c6-7fd20e947743
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.reorder_point
+
+	property max_capacity
+		dataType: int64
+		lineageTag: f866dac0-6f8a-437c-97a6-962a4294aefe
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.max_capacity
+
+	property is_available
+		dataType: boolean
+		lineageTag: c16cbb08-1425-402d-ba07-7bd5cf1acf93
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.is_available
+
+	property is_below_reorder
+		dataType: boolean
+		lineageTag: ed4237fc-c891-49a2-abe6-5d5c5da7843b
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot.is_below_reorder
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: 432ac33d-ce8c-4baa-a792-c517843f9f97
+
+		backingConfiguration
+			valueColumn: factinventorysnapshot._gold_processed_at
+
+	synonym inventory
+
+	synonym stock
+
+	synonym 'stock position'
+
+	synonym 'available stock'
+
+	synonym 'on-hand inventory'
+
+	synonym 'inventory level'
+

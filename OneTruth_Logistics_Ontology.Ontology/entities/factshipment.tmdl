@@ -1,0 +1,148 @@
+/// A movement of goods between an origin and destination, managed by a carrier on a defined route.
+entity factshipment
+	lineageTag: c1997e01-b0cd-44e2-9800-dba2defb989c
+	backingTable: factshipment
+
+	property shipment_id
+		dataType: string
+		lineageTag: 3301e962-43bb-4870-b8f6-60673ba39bdc
+
+		backingConfiguration
+			valueColumn: factshipment.shipment_id
+
+	property order_id
+		dataType: string
+		lineageTag: 8077f273-e443-4256-be7e-653d1c396c66
+
+		backingConfiguration
+			valueColumn: factshipment.order_id
+
+	property carrier_sk
+		dataType: int64
+		lineageTag: f7f357f6-c322-4282-9f5c-5ceab943d968
+
+		backingConfiguration
+			valueColumn: factshipment.carrier_sk
+
+	property route_sk
+		dataType: int64
+		lineageTag: 4da80ee6-6fb2-4fa7-8b73-aab7b25e7347
+
+		backingConfiguration
+			valueColumn: factshipment.route_sk
+
+	property origin_warehouse_sk
+		dataType: int64
+		lineageTag: 8d485cfa-aee2-4535-a467-3cd352bed6ca
+
+		backingConfiguration
+			valueColumn: factshipment.origin_warehouse_sk
+
+	property destination_warehouse_sk
+		dataType: int64
+		lineageTag: 80b9a5d8-a733-426a-a40e-1ed6ef14062d
+
+		backingConfiguration
+			valueColumn: factshipment.destination_warehouse_sk
+
+	property ship_date_id
+		dataType: int64
+		lineageTag: 6a252118-ea75-452a-86fa-b2e8fed4530f
+
+		backingConfiguration
+			valueColumn: factshipment.ship_date_id
+
+	property delivery_date_id
+		dataType: int64
+		lineageTag: 7efca202-ba21-4266-b679-280bef2973e1
+
+		backingConfiguration
+			valueColumn: factshipment.delivery_date_id
+
+	property planned_delivery_date_id
+		dataType: int64
+		lineageTag: 9702ccb9-7d76-4e15-9193-9699797752eb
+
+		backingConfiguration
+			valueColumn: factshipment.planned_delivery_date_id
+
+	property planned_ship_date
+		dataType: dateTime
+		lineageTag: 178dba6b-8503-4d2c-8a9e-221e50489392
+
+		backingConfiguration
+			valueColumn: factshipment.planned_ship_date
+
+	property actual_ship_date
+		dataType: dateTime
+		lineageTag: 76efaec8-fa0f-4b15-b4f0-d9d213841303
+
+		backingConfiguration
+			valueColumn: factshipment.actual_ship_date
+
+	property planned_delivery_date
+		dataType: dateTime
+		lineageTag: c8d65b1a-27b6-41d2-a44a-728ae1645a61
+
+		backingConfiguration
+			valueColumn: factshipment.planned_delivery_date
+
+	property actual_delivery_date
+		dataType: dateTime
+		lineageTag: d045687f-4c2a-4263-a29c-02321e4d3ab4
+
+		backingConfiguration
+			valueColumn: factshipment.actual_delivery_date
+
+	property shipment_status
+		dataType: string
+		lineageTag: 49a71254-4838-44ec-a131-d156aa46eb6b
+
+		backingConfiguration
+			valueColumn: factshipment.shipment_status
+
+	property total_weight_kg
+		dataType: double
+		lineageTag: db4071f0-f19c-4c62-9fdf-141525313d98
+
+		backingConfiguration
+			valueColumn: factshipment.total_weight_kg
+
+	property shipment_mode
+		dataType: string
+		lineageTag: c41e2994-6ab3-481b-8528-6c213152ee54
+
+		backingConfiguration
+			valueColumn: factshipment.shipment_mode
+
+	property delivery_variance_days
+		dataType: int64
+		lineageTag: 043882d0-4697-43f1-a852-fbdf4970db02
+
+		backingConfiguration
+			valueColumn: factshipment.delivery_variance_days
+
+	property is_on_time
+		dataType: boolean
+		lineageTag: 443df1eb-798d-4c2a-87bb-8d4d8fd9d584
+
+		backingConfiguration
+			valueColumn: factshipment.is_on_time
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: c2825ff2-e3e7-4cbe-87f9-7b5a52805109
+
+		backingConfiguration
+			valueColumn: factshipment._gold_processed_at
+
+	synonym load
+
+	synonym consignment
+
+	synonym delivery
+
+	synonym dispatch
+
+	synonym 'freight movement'
+

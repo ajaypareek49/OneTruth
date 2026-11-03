@@ -1,0 +1,76 @@
+table dimproduct
+	lineageTag: 6f85bf62-ee16-470e-ab73-7467e2bed9c5
+	sourceLineageTag: 55500138-4c4a-4ec3-ab33-3554bff70c25
+
+	column product_sk
+		dataType: int64
+		lineageTag: 1e451b5f-3662-462c-9e63-3ad235aeb47d
+		sourceLineageTag: 71abe399-1620-4504-9b56-130fbef8d7ed
+		sourceColumn: product_sk
+
+	column product_nk
+		dataType: string
+		lineageTag: 91a16849-4d19-413f-94ff-bac424af6e64
+		sourceLineageTag: 6483266b-8978-4675-baf0-3c5492124d3e
+		sourceColumn: product_nk
+
+	column product_name
+		dataType: string
+		lineageTag: b834bede-ff8c-45b3-aca1-49f84ebe4331
+		sourceLineageTag: 92f0367a-2a3a-4a4d-ba5c-851e45872552
+		sourceColumn: product_name
+
+	column category
+		dataType: string
+		lineageTag: a0fb11ae-9a16-420a-ab0f-81a90323e391
+		sourceLineageTag: ac726e13-a9b3-4f0a-8f0f-ec60afad2022
+		sourceColumn: category
+
+	column brand
+		dataType: string
+		lineageTag: 30a1aaad-318b-413e-929f-6ec50b65b26c
+		sourceLineageTag: 18448247-e0ba-4084-8410-a03dfe55f95b
+		sourceColumn: brand
+
+	column unit_weight_kg
+		dataType: double
+		lineageTag: d38b642a-86e4-4783-b255-cd29b96f9751
+		sourceLineageTag: 0f8dac16-d804-431f-a4da-d13a5a8da1e2
+		sourceColumn: unit_weight_kg
+
+	column unit_cost_usd
+		dataType: double
+		lineageTag: d83c2b38-fe62-4b1d-8428-decc7913d195
+		sourceLineageTag: 6ef6e99e-3f5f-4176-b7af-04d3a9fcd4d2
+		sourceColumn: unit_cost_usd
+
+	column lead_time_days
+		dataType: int64
+		lineageTag: 4400e1b6-6c01-486f-bfd0-3e0b8fc8a7c9
+		sourceLineageTag: 82f98228-1c25-4dcf-be32-146c3b64d9b2
+		sourceColumn: lead_time_days
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: 8e9f998e-fb4a-4676-be99-b811dfb6e97f
+		sourceLineageTag: b88b2eca-c0ec-4246-9960-f3004d1fb1ef
+		sourceColumn: _gold_processed_at
+
+	partition dimproduct-partition = entity
+		mode: directQuery
+		source
+			entityName: dimproduct
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Ontology",
+    "displayName": "OneTruth_Logistics_Ontology"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "830a61ae-8af2-915c-4e30-74d56b44ff07"
+  }
+}

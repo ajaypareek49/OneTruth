@@ -1,0 +1,69 @@
+/// An organisation or individual that places orders and receives fulfilment from the supply chain.
+entity dimcustomer
+	lineageTag: 88440d8d-75e7-4128-9c42-ed939a5c487c
+	backingTable: dimcustomer
+
+	property customer_sk
+		dataType: int64
+		lineageTag: ddb2958e-db70-4256-91b8-fe9e5e1c0425
+
+		backingConfiguration
+			valueColumn: dimcustomer.customer_sk
+
+	property customer_nk
+		dataType: string
+		lineageTag: a98517d6-cfcf-4465-b780-e9ebd3e3bb53
+
+		backingConfiguration
+			valueColumn: dimcustomer.customer_nk
+
+	property customer_name
+		dataType: string
+		lineageTag: 7e6aacc1-7cc4-4c5a-90af-ce627f040428
+
+		backingConfiguration
+			valueColumn: dimcustomer.customer_name
+
+	property segment
+		dataType: string
+		lineageTag: 5f06cd30-a090-4327-8899-ac9b1833bea3
+
+		backingConfiguration
+			valueColumn: dimcustomer.segment
+
+	property region
+		dataType: string
+		lineageTag: ade64499-8c61-4977-a7c3-9b3ef657938d
+
+		backingConfiguration
+			valueColumn: dimcustomer.region
+
+	property country
+		dataType: string
+		lineageTag: 02051189-28b4-4e87-9675-99dd644f3f11
+
+		backingConfiguration
+			valueColumn: dimcustomer.country
+
+	property credit_limit
+		dataType: double
+		lineageTag: 368eb126-89b5-4a3e-bd28-ef2d64162aa6
+
+		backingConfiguration
+			valueColumn: dimcustomer.credit_limit
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: 7d638527-391b-4df1-a231-4b6655c4f4b8
+
+		backingConfiguration
+			valueColumn: dimcustomer._gold_processed_at
+
+	synonym buyer
+
+	synonym client
+
+	synonym account
+
+	synonym 'end customer'
+

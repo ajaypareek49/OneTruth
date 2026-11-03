@@ -2,6 +2,42 @@ table factinventorysnapshot
 	lineageTag: 7e37ae4b-b6c7-4f00-9fa1-054fb52acff5
 	sourceLineageTag: [dbo].[factinventorysnapshot]
 
+	measure 'Stockout Risk Flag' =
+			
+			VAR LatestDate =
+			    CALCULATE(
+			        MAX('factinventorysnapshot'[snapshot_date]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_date]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_date_id]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_id])
+			    )
+			VAR AvailableQty =
+			    CALCULATE(
+			        SUM('factinventorysnapshot'[available_qty]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_date]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_date_id]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_id]),
+			        'factinventorysnapshot'[snapshot_date] = LatestDate
+			    )
+			VAR ReorderPoint =
+			    CALCULATE(
+			        MAX('factinventorysnapshot'[reorder_point]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_date]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_date_id]),
+			        REMOVEFILTERS('factinventorysnapshot'[snapshot_id]),
+			        'factinventorysnapshot'[snapshot_date] = LatestDate
+			    )
+			RETURN
+			    IF(
+			        ISBLANK(AvailableQty) || ISBLANK(ReorderPoint),
+			        BLANK(),
+			        IF(AvailableQty = 0 || AvailableQty < ReorderPoint, 1, 0)
+			    )
+		formatString: 0
+		lineageTag: 0f1ad2da-8c1c-4591-a132-8ba5d6518aed
+
+		changedProperty = Name
+
 	column snapshot_id
 		dataType: string
 		lineageTag: 924c005f-0d4e-4e44-b4fb-ad078bc1057c

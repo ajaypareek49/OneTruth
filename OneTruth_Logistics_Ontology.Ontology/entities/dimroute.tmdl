@@ -1,0 +1,71 @@
+/// A defined transportation path between an origin city and destination city, with an associated mode and standard transit time.
+entity dimroute
+	lineageTag: 5554c951-9a47-42e2-b099-1a13a44fe924
+	backingTable: dimroute
+
+	property route_sk
+		dataType: int64
+		lineageTag: 6ee4bb8a-bb11-4a55-b025-441c755afbdc
+
+		backingConfiguration
+			valueColumn: dimroute.route_sk
+
+	property route_nk
+		dataType: string
+		lineageTag: 564ab82e-4a97-4891-9070-5d65015cf7a7
+
+		backingConfiguration
+			valueColumn: dimroute.route_nk
+
+	property route_name
+		dataType: string
+		lineageTag: 75fec443-d017-47f3-9942-5c7453902e7c
+
+		backingConfiguration
+			valueColumn: dimroute.route_name
+
+	property origin_city
+		dataType: string
+		lineageTag: 24f959cf-edc2-4d61-8747-23f3bdd2eaad
+
+		backingConfiguration
+			valueColumn: dimroute.origin_city
+
+	property destination_city
+		dataType: string
+		lineageTag: 5248a8f4-dae0-4e3e-9585-7bbeb9f94700
+
+		backingConfiguration
+			valueColumn: dimroute.destination_city
+
+	property transport_mode
+		dataType: string
+		lineageTag: 381f46fa-b77b-4732-8df6-775997d795e5
+
+		backingConfiguration
+			valueColumn: dimroute.transport_mode
+
+	property standard_transit_days
+		dataType: int64
+		lineageTag: 1e9b1f6c-cb85-498f-85a5-57d35d89a4fb
+
+		backingConfiguration
+			valueColumn: dimroute.standard_transit_days
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: cd7adb01-f187-4f6c-b6a0-b0953aea6f01
+
+		backingConfiguration
+			valueColumn: dimroute._gold_processed_at
+
+	synonym lane
+
+	synonym corridor
+
+	synonym 'transport lane'
+
+	synonym 'shipping lane'
+
+	synonym 'freight lane'
+

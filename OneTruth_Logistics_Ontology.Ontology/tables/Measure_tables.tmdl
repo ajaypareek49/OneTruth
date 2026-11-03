@@ -1,0 +1,85 @@
+table Measure_tables
+	lineageTag: ac02133f-03a2-4246-9b8a-757c6cedcfda
+	sourceLineageTag: 3de044e5-6f02-40de-a76f-a899044b7e78
+
+	/// % of Delivered shipments where actual_delivery_date ≤ planned_delivery_date
+	measure 'On-Time Delivery %' = EXTERNALMEASURE("On-Time Delivery %", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		displayFolder: Transportation
+		lineageTag: d9270078-5998-4160-81b2-bf99ab36e132
+		sourceLineageTag: e52d34f0-5901-4e30-aac1-b044dd10161e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Sum of invoice_amount_usd across all non-Disputed invoices
+	measure 'Total Freight Cost' = EXTERNALMEASURE("Total Freight Cost", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		displayFolder: Transportation
+		lineageTag: 8b9d3d0e-9d4e-44e1-8bd2-b4dec94e9591
+		sourceLineageTag: ee895020-568b-4e67-ac67-f471aa7e656e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total Freight Cost divided by count of Delivered shipments with invoices
+	measure 'Freight Cost per Shipment' = EXTERNALMEASURE("Freight Cost per Shipment", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		displayFolder: Transportation
+		lineageTag: 3079eaae-71cb-44ce-87bd-be18d60c1043
+		sourceLineageTag: 4e2db8a5-6a9e-48e7-93ce-8116777580f5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of orders with status = Delivered out of all non-Cancelled orders
+	measure 'Order Fulfilment Rate' = EXTERNALMEASURE("Order Fulfilment Rate", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		displayFolder: Order Fulfilment
+		lineageTag: d305102c-6643-4f06-941e-70a4803b48af
+		sourceLineageTag: 244518dc-eb0a-42e9-8e8e-4589c1fa4807
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of Dispatch tasks where actual_end_time > planned_end_time
+	measure 'Late Dispatch Rate' = EXTERNALMEASURE("Late Dispatch Rate", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		displayFolder: Warehouse
+		lineageTag: 58c64cf0-d6a4-4b6f-9492-2623efe9be8d
+		sourceLineageTag: 2c6028b2-7cbe-4cbb-826f-7f2cd4ae8698
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of product-warehouse-date snapshots where available_qty > 0
+	measure 'Inventory Availability %' = EXTERNALMEASURE("Inventory Availability %", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		displayFolder: Inventory
+		lineageTag: ee5fb4bb-5697-4c0c-9d90-144b57c34018
+		sourceLineageTag: f5a4b798-9636-4f84-9a9b-2c35c7bafb66
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// % of Received inbound receipts where actual_receipt_date ≤ planned_receipt_date
+	measure 'Supplier On-Time Inbound %' = EXTERNALMEASURE("Supplier On-Time Inbound %", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		displayFolder: Supplier
+		lineageTag: fe5fda9b-3524-46f6-9570-336404b14d85
+		sourceLineageTag: 548f3fe9-c420-4f12-85e7-6917f1396996
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Count of exception records with High or Medium severity, status <> Resolved
+	measure 'Exception Count' = EXTERNALMEASURE("Exception Count", INTEGER, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
+		formatString: 0
+		displayFolder: Operations
+		lineageTag: 7340f8d7-a447-48fb-98fd-c27ce751b5ab
+		sourceLineageTag: 401a6f31-ca7d-47d1-84b1-7a66d6d7b0e7
+
+	partition Measure_tables-partition = entity
+		mode: directQuery
+		source
+			entityName: Measure_tables
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

@@ -1,0 +1,221 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "7ae5ecd2bb5218d8e7cc",
+  "position": {
+    "x": 72,
+    "y": 392,
+    "z": 0,
+    "height": 250,
+    "width": 400,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "factexception"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Count(factexception)",
+              "displayName": "Open high and medium exceptions"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc0a159c812482678b80",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "factexception"
+              }
+            },
+            "Property": "severity"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "e",
+              "Entity": "factexception",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Or": {
+                  "Left": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "e"
+                            }
+                          },
+                          "Property": "severity"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'High'"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "e"
+                            }
+                          },
+                          "Property": "severity"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'Medium'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "restatement": "Severity is High or Medium",
+        "howCreated": "User"
+      },
+      {
+        "name": "15da3ac215d65a0e93ca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "factexception"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "e",
+              "Entity": "factexception",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "e"
+                        }
+                      },
+                      "Property": "status"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "'Open'"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "restatement": "Status is Open",
+        "howCreated": "User"
+      }
+    ]
+  },
+  "howCreated": "Copilot"
+}

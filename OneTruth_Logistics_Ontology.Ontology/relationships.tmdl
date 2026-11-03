@@ -1,0 +1,108 @@
+relationship factshipment_to_dimcarrier
+	fromColumn: factshipment.carrier_sk
+	toColumn: dimcarrier.carrier_sk
+
+	annotation ONT_SourceRelationship = bd590394-c791-c2fe-b4fc-196d0d08a65f
+
+relationship factshipment_to_dimroute
+	fromColumn: factshipment.route_sk
+	toColumn: dimroute.route_sk
+
+	annotation ONT_SourceRelationship = 4cca77c0-9853-b86c-deec-ab9601c0eab0
+
+relationship factshipment_to_dimwarehouse
+	fromColumn: factshipment.origin_warehouse_sk
+	toColumn: dimwarehouse.warehouse_sk
+
+	annotation ONT_SourceRelationship = c5e8d3b0-ab36-523e-f67e-d98fe1a120b5
+
+relationship factshipment_to_dimdate
+	fromColumn: factshipment.ship_date_id
+	toColumn: dimdate.date_id
+
+	annotation ONT_SourceRelationship = 1f2f299e-f428-5def-60fc-9fa149fcc0a6
+
+relationship factorder_to_dimcustomer
+	fromColumn: factorder.customer_sk
+	toColumn: dimcustomer.customer_sk
+
+	annotation ONT_SourceRelationship = 65946b09-e080-8584-d6b6-b09e3e63b00c
+
+relationship factorder_to_dimdate
+	fromColumn: factorder.order_date_id
+	toColumn: dimdate.date_id
+
+	annotation ONT_SourceRelationship = 893d7a13-ad5f-139b-c350-520e069810d9
+
+relationship factinventorysnapshot_to_dimwarehouse
+	fromColumn: factinventorysnapshot.warehouse_sk
+	toColumn: dimwarehouse.warehouse_sk
+
+	annotation ONT_SourceRelationship = d5c149a9-eae5-7aef-d972-d3667f1c402b
+
+relationship factinventorysnapshot_to_dimproduct
+	fromColumn: factinventorysnapshot.product_sk
+	toColumn: dimproduct.product_sk
+
+	annotation ONT_SourceRelationship = f5ad7c2d-ef38-323d-1195-b26d5597fc3c
+
+relationship factinventorysnapshot_to_dimdate
+	fromColumn: factinventorysnapshot.snapshot_date_id
+	toColumn: dimdate.date_id
+
+	annotation ONT_SourceRelationship = 0e3a337e-bfbc-3cfa-416f-b55be5804ed0
+
+relationship factwarehousetask_to_dimwarehouse
+	fromColumn: factwarehousetask.warehouse_sk
+	toColumn: dimwarehouse.warehouse_sk
+
+	annotation ONT_SourceRelationship = cbf23918-a261-ce3c-fc84-74566436f5a4
+
+relationship factwarehousetask_to_dimdate
+	fromColumn: factwarehousetask.task_date_id
+	toColumn: dimdate.date_id
+
+	annotation ONT_SourceRelationship = 561d2dcd-8a20-18c2-57bf-021747d507b1
+
+relationship factinboundreceipt_to_dimsupplier
+	fromColumn: factinboundreceipt.supplier_sk
+	toColumn: dimsupplier.supplier_sk
+
+	annotation ONT_SourceRelationship = 6277fdcc-2f55-da86-4c34-1bcd10898bf4
+
+relationship factinboundreceipt_to_dimwarehouse
+	fromColumn: factinboundreceipt.warehouse_sk
+	toColumn: dimwarehouse.warehouse_sk
+
+	annotation ONT_SourceRelationship = bb0203a3-5026-aeb8-e381-a6afa497ac5d
+
+relationship factinboundreceipt_to_dimdate
+	fromColumn: factinboundreceipt.receipt_date_id
+	toColumn: dimdate.date_id
+
+	annotation ONT_SourceRelationship = a6866626-e416-199b-2567-f9df36f4fa56
+
+relationship factfreightinvoice_to_dimcarrier
+	fromColumn: factfreightinvoice.carrier_sk
+	toColumn: dimcarrier.carrier_sk
+
+	annotation ONT_SourceRelationship = ffecaa8d-40f4-5706-a167-c380c376d05b
+
+relationship factfreightinvoice_to_dimcosttype
+	fromColumn: factfreightinvoice.cost_type_sk
+	toColumn: dimcosttype.cost_type_sk
+
+	annotation ONT_SourceRelationship = f913e109-2719-1ed2-843b-4052a2523d87
+
+relationship factfreightinvoice_to_dimdate
+	fromColumn: factfreightinvoice.invoice_date_id
+	toColumn: dimdate.date_id
+
+	annotation ONT_SourceRelationship = b1e20c32-1645-6c7c-03e9-b2d77569dd19
+
+relationship factexception_to_dimdate
+	fromColumn: factexception.exception_date_id
+	toColumn: dimdate.date_id
+
+	annotation ONT_SourceRelationship = eea823e9-f1d4-3c63-483f-cf522ae4d9af
+

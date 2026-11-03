@@ -1,0 +1,88 @@
+table dimcarrier
+	lineageTag: c7c7ae46-b777-44e2-beec-74dbc6d9d572
+	sourceLineageTag: e1372339-27e3-4acb-8ff1-d939195be7e7
+
+	column carrier_sk
+		dataType: int64
+		lineageTag: 446c00b9-9b23-4d01-9760-cf69bb9472bd
+		sourceLineageTag: dbbd2cec-60bb-4247-a763-ccf33533bc0c
+		sourceColumn: carrier_sk
+
+	column carrier_nk
+		dataType: string
+		lineageTag: e64e1ca2-82df-4915-9b0d-bbbdc9fba250
+		sourceLineageTag: 154260b2-406b-4e10-a30d-858573e88a6b
+		sourceColumn: carrier_nk
+
+	column carrier_name
+		dataType: string
+		lineageTag: 0d859480-93c7-4587-b26b-707628b7c098
+		sourceLineageTag: 7a5819e0-d9be-41d4-8790-7aa4a2e40318
+		sourceColumn: carrier_name
+
+	column carrier_type
+		dataType: string
+		lineageTag: 42176142-e38c-4516-acec-b6cbbf1b48c7
+		sourceLineageTag: 7d4a9bb9-9925-44ef-8de1-a39e19661204
+		sourceColumn: carrier_type
+
+	column service_level
+		dataType: string
+		lineageTag: 9ae8e991-10c5-40fd-a71f-d05ccd938087
+		sourceLineageTag: e14f37f7-54a8-4a6f-9a1f-ce587241c5ce
+		sourceColumn: service_level
+
+	column contact_email
+		dataType: string
+		lineageTag: a5eee445-a10e-4b64-a7f9-3813c22e7a71
+		sourceLineageTag: 6f0602a4-0450-491d-92f1-53639c1dc3e8
+		sourceColumn: contact_email
+
+	column active_flag
+		dataType: int64
+		lineageTag: d5bbef28-7dee-42aa-810a-dc3cea8a9163
+		sourceLineageTag: fe54f3fb-31c0-4b71-a001-51bba1f9d6a3
+		sourceColumn: active_flag
+
+	column effective_date
+		dataType: dateTime
+		lineageTag: 71e515fc-929b-47eb-9a89-f465f3180945
+		sourceLineageTag: 5a441cbe-33bb-4dab-b441-bf9b7e36746a
+		sourceColumn: effective_date
+
+	column expiry_date
+		dataType: dateTime
+		lineageTag: ed65ecf9-742b-4cd7-a17d-72dde91f198c
+		sourceLineageTag: 94491341-25c2-41e2-aa19-13296da2fa49
+		sourceColumn: expiry_date
+
+	column is_current
+		dataType: boolean
+		lineageTag: facc168d-427e-4e03-b2b8-a868859e0e7e
+		sourceLineageTag: 82ca5a28-d5ec-4d5b-9286-4d1acd155ac7
+		sourceColumn: is_current
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: 368a9dcd-4dbd-4090-b64c-b042c16260cf
+		sourceLineageTag: 4cff0983-affc-4d6e-b902-8f9fea30cda6
+		sourceColumn: _gold_processed_at
+
+	partition dimcarrier-partition = entity
+		mode: directQuery
+		source
+			entityName: dimcarrier
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+
