@@ -103,7 +103,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "DimWarehouse[region] = LOOKUPVALUE(UserRegionMapping[region], UserRegionMapping[upn], USERPRINCIPALNAME())",
+                    "value": "dimaccounts[email]=USERPRINCIPALNAME()",
                     "textStyle": {
                       "fontFamily": "Consolas",
                       "fontSize": "10pt",
@@ -127,24 +127,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Carrier_View_Only",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Carrier performance only. Object-level security hides FactFreightInvoice.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "11pt",
-                      "color": "#3a4350"
-                    }
+                    "value": ""
                   }
                 ]
               },
