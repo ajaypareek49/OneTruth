@@ -19,95 +19,62 @@
               {
                 "textRuns": [
                   {
-                    "value": "“The carrier with the worst on-time delivery rate is: ",
+                    "value": "The carrier with the worst on-time delivery rate is ",
                     "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Carrier: UPS Freight ",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Carrier NK: 2 ",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Total shipments: 63 ",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "On-time shipments: 39 ",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "On-time delivery rate: ",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
+                      "fontFamily": "Segoe UI, Segoe UI Web (West European), -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#242424"
                     }
                   },
                   {
-                    "value": "61.9%",
+                    "value": "UPS Freight",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
+                      "fontFamily": "Segoe UI, Segoe UI Web (West European), -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#242424"
                     }
                   },
                   {
-                    "value": "”",
+                    "value": ", with an on-time delivery rate of ",
                     "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "12pt",
-                      "color": "#1b1f24"
+                      "fontFamily": "Segoe UI, Segoe UI Web (West European), -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#242424"
+                    }
+                  },
+                  {
+                    "value": "0.6964",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI, Segoe UI Web (West European), -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#242424"
+                    }
+                  },
+                  {
+                    "value": " (about ",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI, Segoe UI Web (West European), -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#242424"
+                    }
+                  },
+                  {
+                    "value": "69.6%",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI, Segoe UI Web (West European), -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#242424"
+                    }
+                  },
+                  {
+                    "value": ").",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI, Segoe UI Web (West European), -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif",
+                      "fontSize": "14px",
+                      "color": "#242424"
                     }
                   }
                 ]

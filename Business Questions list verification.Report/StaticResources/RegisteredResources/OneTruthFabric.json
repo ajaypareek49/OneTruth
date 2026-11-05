@@ -148,6 +148,22 @@
           }
         ]
       }
+    },
+    "aiNarratives": {
+      "*": {
+        "text": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#1B1F24"
+              }
+            },
+            "fontFamily": "Segoe UI",
+            "fontSize": 11,
+            "textAlignment": "Left"
+          }
+        ]
+      }
     }
   }
 }

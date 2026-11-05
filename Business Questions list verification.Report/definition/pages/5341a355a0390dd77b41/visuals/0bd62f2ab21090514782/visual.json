@@ -19,12 +19,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "✕  Mismatch",
+                    "value": "✓  Match",
                     "textStyle": {
-                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "18pt",
-                      "color": "#c4314b"
+                      "color": "#107C41",
+                      "fontWeight": "bold"
                     }
                   }
                 ]
@@ -32,11 +32,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Certified UPS Freight 69.6%  vs  Agent UPS Freight 61.9%",
+                    "value": "Certified UPS Freight 69.6%  vs  Agent UPS Freight 69.6%",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
-                      "color": "#7a2e3a"
+                      "color": "#1E4D33"
                     }
                   }
                 ]
@@ -62,7 +62,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FDE7E9'"
+                      "Value": "'#E3F3EA'"
                     }
                   }
                 }
@@ -93,7 +93,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FDE7E9'"
+                      "Value": "'#E3F3EA'"
                     }
                   }
                 }

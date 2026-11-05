@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "b6266a72760949d0b1b6",
   "position": {
-    "x": 72,
-    "y": 112,
+    "x": 71.489361702127653,
+    "y": 112.34042553191489,
     "z": 1000,
-    "height": 140,
-    "width": 1180,
+    "height": 153.19148936170214,
+    "width": 1180.3039513677811,
     "tabOrder": 1000
   },
   "visual": {
@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "41pt",
-                      "color": "#FFFFFF"
+                      "color": "#ffffff"
                     }
                   }
                 ]
@@ -31,11 +31,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "Power BI vs Fabric Data Agent",
+                    "value": "Power BI vs Multi Agent",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
                       "fontSize": "41pt",
-                      "color": "#FFFFFF"
+                      "color": "#ffffff"
                     }
                   }
                 ]

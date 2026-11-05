@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "e665c50fd7144db1d185",
-  "displayName": "Q09 · Supplier On-Time",
+  "displayName": "Q07 · Supplier On-Time",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
@@ -14,7 +14,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'bg_q09.png'"
+                    "Value": "'bg_q07.png'"
                   }
                 }
               },
@@ -23,7 +23,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "bg_q09.png"
+                    "ItemName": "bg_q07.png"
                   }
                 }
               },

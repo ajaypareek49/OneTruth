@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "8d27e01ec04225e855e0",
-  "displayName": "Q08 · Inventory Availability",
+  "displayName": "Q06 · Inventory Availability",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920,
@@ -14,7 +14,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'bg_q08.png'"
+                    "Value": "'bg_q06.png'"
                   }
                 }
               },
@@ -23,7 +23,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "bg_q08.png"
+                    "ItemName": "bg_q06.png"
                   }
                 }
               },

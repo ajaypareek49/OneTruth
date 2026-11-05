@@ -19,11 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "“There are currently 36 open exceptions with High or Medium severity.”",
+                    "value": "“There are currently 17 open exceptions with High or Medium severity.”",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "15pt",
-                      "color": "#1B1F24"
+                      "color": "#1b1f24"
                     }
                   }
                 ]

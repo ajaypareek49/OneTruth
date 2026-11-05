@@ -21,18 +21,18 @@
                   {
                     "value": "Reconciliation  ",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
-                      "color": "#117865",
-                      "fontWeight": "bold"
+                      "color": "#117865"
                     }
                   },
                   {
-                    "value": "Control total: 36 exceptions. Stockout 8, Late Delivery 6, Receiving Discrepancy 6, Short Shipment 5.",
+                    "value": "Control total: 17 exceptions. Stockout 5, Late Delivery 2, Receiving Discrepancy 3, Short Shipment 3, Documentation Error 3, Carrier No Show 1.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
-                      "color": "#5F6B7A"
+                      "color": "#5f6b7a"
                     }
                   }
                 ]

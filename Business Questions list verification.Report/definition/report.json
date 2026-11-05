@@ -33,9 +33,33 @@
           }
         }
       }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
     ]
   },
   "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU11",
+          "path": "BaseThemes/Fluent2-CY26SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
     {
       "name": "RegisteredResources",
       "type": "RegisteredResources",
@@ -86,16 +110,6 @@
           "type": "Image"
         },
         {
-          "name": "bg_q09.png",
-          "path": "bg_q09.png",
-          "type": "Image"
-        },
-        {
-          "name": "bg_q10.png",
-          "path": "bg_q10.png",
-          "type": "Image"
-        },
-        {
           "name": "bg_rls.png",
           "path": "bg_rls.png",
           "type": "Image"
@@ -104,17 +118,6 @@
           "name": "OneTruthFabric.json",
           "path": "OneTruthFabric.json",
           "type": "Image"
-        }
-      ]
-    },
-    {
-      "name": "SharedResources",
-      "type": "SharedResources",
-      "items": [
-        {
-          "name": "Fluent2-CY26SU11",
-          "path": "BaseThemes/Fluent2-CY26SU11.json",
-          "type": "BaseTheme"
         }
       ]
     }
@@ -126,6 +129,5 @@
     "allowChangeFilterTypes": true,
     "useEnhancedTooltips": true,
     "useDefaultAggregateDisplayName": true
-  },
-  "linguisticSchemaSyncVersion": 0
+  }
 }

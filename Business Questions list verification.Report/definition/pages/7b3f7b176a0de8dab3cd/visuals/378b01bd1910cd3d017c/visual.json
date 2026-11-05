@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "378b01bd1910cd3d017c",
   "position": {
-    "x": 492,
-    "y": 392,
+    "x": 491.74272089326564,
+    "y": 392.590237661381,
     "z": 1000,
-    "height": 250,
-    "width": 616,
+    "height": 249.22110650176407,
+    "width": 253.24080176792154,
     "tabOrder": 1000
   },
   "visual": {
@@ -109,37 +109,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "950138c3059d68312150",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "factexception"
-              }
-            },
-            "Property": "status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "da802c912300215a4dc7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Measure_tables"
-              }
-            },
-            "Property": "Exception Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "4de0bc407e510e90462b",
   "position": {
-    "x": 72.354514790834727,
-    "y": 661.90982049393244,
+    "x": 769.101694258132,
+    "y": 392.590237661381,
     "z": 2000,
-    "height": 290.75795758539141,
-    "width": 400.62962819369596,
+    "height": 210.3640522622417,
+    "width": 338.99430077928122,
     "tabOrder": 2000
   },
   "visual": {
@@ -243,25 +243,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "36edc1c38b40b422d0c5",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "factexception"
-                  }
-                },
-                "Property": "exception_id"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

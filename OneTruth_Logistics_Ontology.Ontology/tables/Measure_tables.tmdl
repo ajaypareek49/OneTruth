@@ -2,7 +2,7 @@ table Measure_tables
 	lineageTag: ac02133f-03a2-4246-9b8a-757c6cedcfda
 	sourceLineageTag: 3de044e5-6f02-40de-a76f-a899044b7e78
 
-	/// % of Delivered shipments where actual_delivery_date ≤ planned_delivery_date
+	/// % of 'Delivered' shipments where actual_delivery_date ≤ planned_delivery_date
 	measure 'On-Time Delivery %' = EXTERNALMEASURE("On-Time Delivery %", DOUBLE, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
 		displayFolder: Transportation
 		lineageTag: d9270078-5998-4160-81b2-bf99ab36e132
@@ -58,7 +58,7 @@ table Measure_tables
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	/// Count of exception records with High or Medium severity, status <> Resolved
+	/// Count of exception records with High or Medium severity, status <> Resolved so status could be 'open' or 'in progress'
 	measure 'Exception Count' = EXTERNALMEASURE("Exception Count", INTEGER, "DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025")
 		formatString: 0
 		displayFolder: Operations
