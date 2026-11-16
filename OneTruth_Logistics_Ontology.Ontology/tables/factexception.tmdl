@@ -1,0 +1,94 @@
+table factexception
+	lineageTag: f0efca4e-a147-4065-8b24-dc13fa665119
+	sourceLineageTag: 37c5e2bd-6aeb-4902-9065-6598bd8e4f83
+
+	column exception_id
+		dataType: string
+		lineageTag: 5bd9d487-e9dc-45df-9408-48318587f36a
+		sourceLineageTag: 07f268ae-d4d5-4246-8831-a07932415797
+		sourceColumn: exception_id
+
+	column exception_date_id
+		dataType: int64
+		lineageTag: 129f7afe-f91f-48cd-a7de-05c5f6d128f8
+		sourceLineageTag: 09df8065-77b3-4ffc-9919-5d89db64dc1c
+		sourceColumn: exception_date_id
+
+	column exception_type
+		dataType: string
+		lineageTag: 1c7d1da5-56f0-4ad4-a7f0-6f100f3b0f82
+		sourceLineageTag: f43696c7-b003-4a9e-9a9c-4b6fde2a7958
+		sourceColumn: exception_type
+
+	column related_entity_type
+		dataType: string
+		lineageTag: 80610ba3-1981-4a2d-92a5-ed33e53b1cef
+		sourceLineageTag: 737a52ae-0112-4715-8903-93a825495723
+		sourceColumn: related_entity_type
+
+	column related_entity_id
+		dataType: string
+		lineageTag: aabe60a7-f012-42b0-8b0a-13ae4d4f7a22
+		sourceLineageTag: dfe7eb69-be20-4f28-8702-0cafdbca0b57
+		sourceColumn: related_entity_id
+
+	column exception_date
+		dataType: dateTime
+		lineageTag: ffef01c1-f797-4ebd-833e-875dddc7458d
+		sourceLineageTag: b25f7f08-52b9-4037-aadf-77c9d5a1e7e9
+		sourceColumn: exception_date
+
+	column severity
+		dataType: string
+		lineageTag: 4c196ec3-f473-41a5-9846-b5a24452d0f9
+		sourceLineageTag: a5ef9c36-424d-4e5c-a0dc-cb3ca0d40a26
+		sourceColumn: severity
+
+	column status
+		dataType: string
+		lineageTag: c86edaa5-ecb8-4f95-9998-e384f88c5a9c
+		sourceLineageTag: 31dcb26c-a1fe-4538-b045-582b56fbf0ab
+		sourceColumn: status
+
+	column description
+		dataType: string
+		lineageTag: da3bfd61-63df-431b-ba89-54f5abd4cf17
+		sourceLineageTag: 4f136d7f-89f6-464d-8146-d750697fe420
+		sourceColumn: description
+
+	column assigned_to
+		dataType: string
+		lineageTag: 11cfe88d-15d8-4435-8b8c-e740d5ae44c2
+		sourceLineageTag: b5da75bd-e4d1-4a2f-940d-381ca16e9f0f
+		sourceColumn: assigned_to
+
+	column resolution_date
+		dataType: dateTime
+		lineageTag: 585e0c5e-20b7-4908-9b09-af2e4e06631b
+		sourceLineageTag: bfdf8a27-362b-4fce-a585-90f8e089476e
+		sourceColumn: resolution_date
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: dfeaf735-9f61-4200-9b3c-e11558d2553b
+		sourceLineageTag: 0fda03cf-0a48-4405-992b-89c5ac5cbcdb
+		sourceColumn: _gold_processed_at
+
+	partition factexception-partition = entity
+		mode: directQuery
+		source
+			entityName: factexception
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

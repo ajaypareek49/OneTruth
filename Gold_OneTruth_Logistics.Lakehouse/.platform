@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "Gold_OneTruth_Logistics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1edd6cf8-52c0-8047-4bcf-4ee32504128c"
+  }
+}

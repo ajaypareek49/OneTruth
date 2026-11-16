@@ -1,0 +1,70 @@
+table dimsupplier
+	lineageTag: f9cc6a52-5a25-419d-a36a-67b73aa9339f
+	sourceLineageTag: 90f30297-93ac-4800-8493-3a348e1af256
+
+	column supplier_sk
+		dataType: int64
+		lineageTag: fa33226e-8ad4-400e-802e-00200b329a98
+		sourceLineageTag: 7565ef79-986c-4261-a0ad-833469e7a02a
+		sourceColumn: supplier_sk
+
+	column supplier_nk
+		dataType: string
+		lineageTag: febefacd-e205-4734-9249-250443a9851c
+		sourceLineageTag: edd1f7c7-f79a-4878-9266-946a59d9eb2b
+		sourceColumn: supplier_nk
+
+	column supplier_name
+		dataType: string
+		lineageTag: 850d1c1d-2f90-4b3a-96e1-d6d34882331e
+		sourceLineageTag: 51ef553c-00c9-490f-a809-253647f090a1
+		sourceColumn: supplier_name
+
+	column supplier_type
+		dataType: string
+		lineageTag: 13a3c1d5-68a5-491c-af26-6cbb50bf3649
+		sourceLineageTag: eaf04098-cef6-4775-b14d-3ff1845c0033
+		sourceColumn: supplier_type
+
+	column supplier_category
+		dataType: string
+		lineageTag: 5641997f-d21b-4ab3-beb4-0c584ec5dbbd
+		sourceLineageTag: ac7b63a7-9a49-4b98-bcac-bcb0b80db890
+		sourceColumn: supplier_category
+
+	column country
+		dataType: string
+		lineageTag: 7f3ed1c3-d541-4edb-bbd2-115d6601c7a2
+		sourceLineageTag: 69e31f66-b945-46f5-852c-c5bf3228ef6b
+		sourceColumn: country
+
+	column lead_time_days
+		dataType: int64
+		lineageTag: e47cb9a8-fc66-4049-aa6b-c1708684f4c0
+		sourceLineageTag: fca6150f-db65-4c22-8c07-0aa36cdb2a53
+		sourceColumn: lead_time_days
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: f3f9e0c8-d176-4179-9359-8a3db884cdfd
+		sourceLineageTag: 77478170-0054-4f71-971e-86aad122c21e
+		sourceColumn: _gold_processed_at
+
+	partition dimsupplier-partition = entity
+		mode: directQuery
+		source
+			entityName: dimsupplier
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

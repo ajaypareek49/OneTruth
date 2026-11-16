@@ -1,0 +1,92 @@
+table dimsupplier
+	lineageTag: 90f30297-93ac-4800-8493-3a348e1af256
+	sourceLineageTag: [dbo].[dimsupplier]
+
+	column supplier_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 7565ef79-986c-4261-a0ad-833469e7a02a
+		sourceLineageTag: supplier_sk
+		summarizeBy: none
+		sourceColumn: supplier_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_nk
+		dataType: string
+		isHidden
+		lineageTag: edd1f7c7-f79a-4878-9266-946a59d9eb2b
+		sourceLineageTag: supplier_nk
+		summarizeBy: none
+		sourceColumn: supplier_nk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_name
+		dataType: string
+		lineageTag: 51ef553c-00c9-490f-a809-253647f090a1
+		sourceLineageTag: supplier_name
+		summarizeBy: none
+		sourceColumn: supplier_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_type
+		dataType: string
+		lineageTag: eaf04098-cef6-4775-b14d-3ff1845c0033
+		sourceLineageTag: supplier_type
+		summarizeBy: none
+		sourceColumn: supplier_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_category
+		dataType: string
+		lineageTag: ac7b63a7-9a49-4b98-bcac-bcb0b80db890
+		sourceLineageTag: supplier_category
+		summarizeBy: none
+		sourceColumn: supplier_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 69e31f66-b945-46f5-852c-c5bf3228ef6b
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_time_days
+		dataType: int64
+		formatString: 0
+		lineageTag: fca6150f-db65-4c22-8c07-0aa36cdb2a53
+		sourceLineageTag: lead_time_days
+		summarizeBy: none
+		sourceColumn: lead_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 77478170-0054-4f71-971e-86aad122c21e
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimsupplier = entity
+		mode: directLake
+		source
+			entityName: dimsupplier
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

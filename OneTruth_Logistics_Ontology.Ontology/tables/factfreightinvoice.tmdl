@@ -1,0 +1,94 @@
+table factfreightinvoice
+	lineageTag: 6c174e5f-10bb-4635-8ad9-669c1a1252f7
+	sourceLineageTag: cbd3f25f-de18-4979-9d27-383af2eac30f
+
+	column invoice_id
+		dataType: string
+		lineageTag: 6355a5c2-449b-4ebb-ba5b-1db4cef697f7
+		sourceLineageTag: 0e4f7620-2b0d-4f46-a771-5e603765991d
+		sourceColumn: invoice_id
+
+	column shipment_id
+		dataType: string
+		lineageTag: 815080d8-9f99-42d1-b561-bde72eee621f
+		sourceLineageTag: 694db28a-da32-4d33-90d4-7557d0526b57
+		sourceColumn: shipment_id
+
+	column carrier_sk
+		dataType: int64
+		lineageTag: 5f2fe2bc-9be3-443a-ab80-bd3e49001131
+		sourceLineageTag: 4188dea6-1a65-427e-bea2-b438dc253c18
+		sourceColumn: carrier_sk
+
+	column cost_type_sk
+		dataType: int64
+		lineageTag: af3dc352-9cf0-4e31-b8a0-3ba7c5a40f60
+		sourceLineageTag: 2b7df3dc-60b6-436a-acc6-eb92fc915951
+		sourceColumn: cost_type_sk
+
+	column invoice_date_id
+		dataType: int64
+		lineageTag: 5e2fda15-850f-4481-a2cf-99cfc171a4dc
+		sourceLineageTag: 745b338b-7f89-49e2-90e3-b72c774d3b55
+		sourceColumn: invoice_date_id
+
+	column invoice_date
+		dataType: dateTime
+		lineageTag: 16d1186b-8a55-4714-a24a-df8510976b2d
+		sourceLineageTag: a3f47b33-8345-4903-8108-3ce6bbb77f9b
+		sourceColumn: invoice_date
+
+	column invoice_amount_usd
+		dataType: double
+		lineageTag: 2dcc268c-b6ae-4c25-a503-f5d76ee37445
+		sourceLineageTag: 6c3c7505-0e27-449f-a1c7-95452f99a8d7
+		sourceColumn: invoice_amount_usd
+
+	column base_freight_usd
+		dataType: double
+		lineageTag: 542bdcf5-e980-4cde-bc43-72744095267c
+		sourceLineageTag: e6fbceda-112e-40f7-acc4-c7157aac6e0f
+		sourceColumn: base_freight_usd
+
+	column fuel_surcharge_usd
+		dataType: double
+		lineageTag: 65fb03b3-221f-4fec-a895-d098cb3e6a85
+		sourceLineageTag: bd592021-6450-42fb-88e9-669e7d93f5c0
+		sourceColumn: fuel_surcharge_usd
+
+	column accessorial_usd
+		dataType: double
+		lineageTag: a2760ff8-af2e-448c-8d50-ef33b31fe42d
+		sourceLineageTag: 5d2cef74-fb8a-4dfd-89e1-c0208e0b90f5
+		sourceColumn: accessorial_usd
+
+	column invoice_status
+		dataType: string
+		lineageTag: d23bb6e4-b1ef-4dc3-9103-351ece5de805
+		sourceLineageTag: 44e9839a-aac1-426e-92a6-b1e88f00d6d0
+		sourceColumn: invoice_status
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: 8d0a705c-0747-473d-8e92-7259dcab0552
+		sourceLineageTag: 5b77c6b5-ff2e-423f-bad4-04968de27178
+		sourceColumn: _gold_processed_at
+
+	partition factfreightinvoice-partition = entity
+		mode: directQuery
+		source
+			entityName: factfreightinvoice
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

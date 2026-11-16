@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Business Questions list verification"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "87dfcd35-d6ab-8ae2-4279-0b4d854cd3e7"
+  }
+}

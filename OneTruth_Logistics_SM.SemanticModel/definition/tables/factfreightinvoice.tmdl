@@ -1,0 +1,141 @@
+table factfreightinvoice
+	lineageTag: cbd3f25f-de18-4979-9d27-383af2eac30f
+	sourceLineageTag: [dbo].[factfreightinvoice]
+
+	column invoice_id
+		dataType: string
+		lineageTag: 0e4f7620-2b0d-4f46-a771-5e603765991d
+		sourceLineageTag: invoice_id
+		summarizeBy: none
+		sourceColumn: invoice_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipment_id
+		dataType: string
+		lineageTag: 694db28a-da32-4d33-90d4-7557d0526b57
+		sourceLineageTag: shipment_id
+		summarizeBy: none
+		sourceColumn: shipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4188dea6-1a65-427e-bea2-b438dc253c18
+		sourceLineageTag: carrier_sk
+		summarizeBy: none
+		sourceColumn: carrier_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_type_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2b7df3dc-60b6-436a-acc6-eb92fc915951
+		sourceLineageTag: cost_type_sk
+		summarizeBy: none
+		sourceColumn: cost_type_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 745b338b-7f89-49e2-90e3-b72c774d3b55
+		sourceLineageTag: invoice_date_id
+		summarizeBy: none
+		sourceColumn: invoice_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a3f47b33-8345-4903-8108-3ce6bbb77f9b
+		sourceLineageTag: invoice_date
+		summarizeBy: none
+		sourceColumn: invoice_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_amount_usd
+		dataType: double
+		lineageTag: 6c3c7505-0e27-449f-a1c7-95452f99a8d7
+		sourceLineageTag: invoice_amount_usd
+		summarizeBy: sum
+		sourceColumn: invoice_amount_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column base_freight_usd
+		dataType: double
+		lineageTag: e6fbceda-112e-40f7-acc4-c7157aac6e0f
+		sourceLineageTag: base_freight_usd
+		summarizeBy: sum
+		sourceColumn: base_freight_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fuel_surcharge_usd
+		dataType: double
+		lineageTag: bd592021-6450-42fb-88e9-669e7d93f5c0
+		sourceLineageTag: fuel_surcharge_usd
+		summarizeBy: sum
+		sourceColumn: fuel_surcharge_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accessorial_usd
+		dataType: double
+		lineageTag: 5d2cef74-fb8a-4dfd-89e1-c0208e0b90f5
+		sourceLineageTag: accessorial_usd
+		summarizeBy: sum
+		sourceColumn: accessorial_usd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column invoice_status
+		dataType: string
+		lineageTag: 44e9839a-aac1-426e-92a6-b1e88f00d6d0
+		sourceLineageTag: invoice_status
+		summarizeBy: none
+		sourceColumn: invoice_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 5b77c6b5-ff2e-423f-bad4-04968de27178
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factfreightinvoice = entity
+		mode: directLake
+		source
+			entityName: factfreightinvoice
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

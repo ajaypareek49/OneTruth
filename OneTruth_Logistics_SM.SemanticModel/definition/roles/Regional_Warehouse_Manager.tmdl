@@ -1,0 +1,9 @@
+role Regional_Warehouse_Manager
+	modelPermission: read
+
+	tablePermission dimwarehouse
+
+	tablePermission dimaccounts = dimaccounts[email]=USERPRINCIPALNAME()
+
+	annotation PBI_Id = 46457ff241524716a6b1f189289edac1
+

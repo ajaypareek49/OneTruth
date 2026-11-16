@@ -1,0 +1,69 @@
+/// An external party that supplies products, raw materials, or services to the supply chain organisation.
+entity dimsupplier
+	lineageTag: 7b0331b1-cec2-4885-ac0c-957d4227f306
+	backingTable: dimsupplier
+
+	property supplier_sk
+		dataType: int64
+		lineageTag: fa33226e-8ad4-400e-802e-00200b329a98
+
+		backingConfiguration
+			valueColumn: dimsupplier.supplier_sk
+
+	property supplier_nk
+		dataType: string
+		lineageTag: febefacd-e205-4734-9249-250443a9851c
+
+		backingConfiguration
+			valueColumn: dimsupplier.supplier_nk
+
+	property supplier_name
+		dataType: string
+		lineageTag: 850d1c1d-2f90-4b3a-96e1-d6d34882331e
+
+		backingConfiguration
+			valueColumn: dimsupplier.supplier_name
+
+	property supplier_type
+		dataType: string
+		lineageTag: 13a3c1d5-68a5-491c-af26-6cbb50bf3649
+
+		backingConfiguration
+			valueColumn: dimsupplier.supplier_type
+
+	property supplier_category
+		dataType: string
+		lineageTag: 5641997f-d21b-4ab3-beb4-0c584ec5dbbd
+
+		backingConfiguration
+			valueColumn: dimsupplier.supplier_category
+
+	property country
+		dataType: string
+		lineageTag: 7f3ed1c3-d541-4edb-bbd2-115d6601c7a2
+
+		backingConfiguration
+			valueColumn: dimsupplier.country
+
+	property lead_time_days
+		dataType: int64
+		lineageTag: e47cb9a8-fc66-4049-aa6b-c1708684f4c0
+
+		backingConfiguration
+			valueColumn: dimsupplier.lead_time_days
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: f3f9e0c8-d176-4179-9359-8a3db884cdfd
+
+		backingConfiguration
+			valueColumn: dimsupplier._gold_processed_at
+
+	synonym vendor
+
+	synonym supplier
+
+	synonym 'inbound supplier'
+
+	synonym 'procurement partner'
+

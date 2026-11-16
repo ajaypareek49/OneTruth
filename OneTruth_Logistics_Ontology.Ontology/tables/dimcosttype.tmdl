@@ -1,0 +1,52 @@
+table dimcosttype
+	lineageTag: c7c9ac29-0ba3-4d31-be47-386d5aa59f2d
+	sourceLineageTag: 665a4be7-cf9b-4691-886c-cde40f26c821
+
+	column cost_type_sk
+		dataType: int64
+		lineageTag: aebeacce-8c0f-442b-9deb-695cb511f753
+		sourceLineageTag: 804bfb79-d06d-4f05-95f3-0d87d4e30852
+		sourceColumn: cost_type_sk
+
+	column cost_type
+		dataType: string
+		lineageTag: d9ca37db-c2ce-41ec-bba9-083e92d880bc
+		sourceLineageTag: 50464f13-4896-48b0-947e-ed5d791a1fa5
+		sourceColumn: cost_type
+
+	column cost_category
+		dataType: string
+		lineageTag: 502aeb7e-05fa-4aff-999f-1aaae8340405
+		sourceLineageTag: 022d246a-0edf-46c4-ad50-fa641f551351
+		sourceColumn: cost_category
+
+	column cost_group
+		dataType: string
+		lineageTag: c0944372-7b0f-4d40-8fd9-944408124a16
+		sourceLineageTag: d0aa42d1-c0ae-410d-bb19-bb2948ad9362
+		sourceColumn: cost_group
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: 2d2eb30a-bd50-43f8-9c5f-f908290dd3c3
+		sourceLineageTag: 94114a5f-009c-4a36-a8ae-f4aa0f40fc4c
+		sourceColumn: _gold_processed_at
+
+	partition dimcosttype-partition = entity
+		mode: directQuery
+		source
+			entityName: dimcosttype
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

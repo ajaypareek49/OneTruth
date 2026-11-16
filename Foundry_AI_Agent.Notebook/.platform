@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "Foundry_AI_Agent"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3aade7e6-eba4-8ce5-4dbf-ef3ac0916aa3"
+  }
+}

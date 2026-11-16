@@ -1,0 +1,9 @@
+expression 'DirectLake - Gold_OneTruth_Logistics' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/fd2b1bb0-e015-4db1-b2c4-5768a0cba224/2504128c-4ee3-4bcf-8047-52c01edd6cf8", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: 98c8763d-8018-43a5-b1d7-cb7a92f816fb
+
+	annotation PBI_IncludeFutureArtifacts = False
+

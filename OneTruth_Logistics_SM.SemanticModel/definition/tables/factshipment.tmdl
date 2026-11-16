@@ -1,0 +1,213 @@
+table factshipment
+	lineageTag: 2d4c6a48-ae07-4c94-8c07-f1e88e4d74c8
+	sourceLineageTag: [dbo].[factshipment]
+
+	column shipment_id
+		dataType: string
+		lineageTag: 99ac5163-0a80-45f7-b49f-b26d8213b47b
+		sourceLineageTag: shipment_id
+		summarizeBy: none
+		sourceColumn: shipment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: 948be455-65c4-4cdf-9475-59cc66f5d882
+		sourceLineageTag: order_id
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column carrier_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 46b4d685-c7a5-4733-a113-f6f7198b4795
+		sourceLineageTag: carrier_sk
+		summarizeBy: none
+		sourceColumn: carrier_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column route_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 79d2593e-0925-47e7-93db-15036359c970
+		sourceLineageTag: route_sk
+		summarizeBy: none
+		sourceColumn: route_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column origin_warehouse_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7920a957-4f66-4dc5-96fa-ace4c578ec23
+		sourceLineageTag: origin_warehouse_sk
+		summarizeBy: none
+		sourceColumn: origin_warehouse_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column destination_warehouse_sk
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c5c92c3f-f17f-4581-8580-5fd2c1369eb6
+		sourceLineageTag: destination_warehouse_sk
+		summarizeBy: sum
+		sourceColumn: destination_warehouse_sk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ship_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: e5ccc7af-4928-4b2b-b7c3-b5e56e0414b5
+		sourceLineageTag: ship_date_id
+		summarizeBy: none
+		sourceColumn: ship_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 55f25ffe-f418-4de7-a747-d98abc45c9ed
+		sourceLineageTag: delivery_date_id
+		summarizeBy: sum
+		sourceColumn: delivery_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_delivery_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a56a58d6-155c-4be6-acbf-e98943951230
+		sourceLineageTag: planned_delivery_date_id
+		summarizeBy: sum
+		sourceColumn: planned_delivery_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_ship_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b5acbb2f-0b3e-4822-8b55-0427eda1db17
+		sourceLineageTag: planned_ship_date
+		summarizeBy: none
+		sourceColumn: planned_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_ship_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0417c6bb-02d5-4040-ae7d-150026b648a5
+		sourceLineageTag: actual_ship_date
+		summarizeBy: none
+		sourceColumn: actual_ship_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column planned_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c65c1648-40e9-49e2-ad1d-2f61f2ea88a5
+		sourceLineageTag: planned_delivery_date
+		summarizeBy: none
+		sourceColumn: planned_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_delivery_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: aa33ec67-b531-4211-9a6c-211e7fe6aad6
+		sourceLineageTag: actual_delivery_date
+		summarizeBy: none
+		sourceColumn: actual_delivery_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column shipment_status
+		dataType: string
+		lineageTag: f39e945d-41db-413a-9e14-03e6ff3f34e5
+		sourceLineageTag: shipment_status
+		summarizeBy: none
+		sourceColumn: shipment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_weight_kg
+		dataType: double
+		lineageTag: 86dad790-257b-46c0-95db-a2ac6025e3bc
+		sourceLineageTag: total_weight_kg
+		summarizeBy: sum
+		sourceColumn: total_weight_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column shipment_mode
+		dataType: string
+		lineageTag: f57b45b1-e70f-478a-b5bc-e40f53185347
+		sourceLineageTag: shipment_mode
+		summarizeBy: none
+		sourceColumn: shipment_mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_variance_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 65942ee7-ad75-48a9-aad9-0c641d9bbcc7
+		sourceLineageTag: delivery_variance_days
+		summarizeBy: sum
+		sourceColumn: delivery_variance_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_on_time
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 11ae0ed6-95a5-417b-9235-a9fea30accb2
+		sourceLineageTag: is_on_time
+		summarizeBy: none
+		sourceColumn: is_on_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: b5859a69-3b6e-4b22-9607-f0bf31c96f11
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factshipment = entity
+		mode: directLake
+		source
+			entityName: factshipment
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "OneTruth_Logistics_SM"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ca23d025-a456-88d7-41e9-10955bd9fe0f"
+  }
+}

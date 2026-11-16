@@ -1,0 +1,137 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/ontology/1.0.0/schema.json",
+  "artifactId": "830a61ae-8af2-915c-4e30-74d56b44ff07",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "displayName": "OneTruth_Logistics_SM_test",
+  "elements": [
+    {
+      "id": "Measure_tables",
+      "is_selected": true,
+      "display_name": "Measure_tables",
+      "type": "ontology.entity",
+      "description": "Measure_tables",
+      "children": []
+    },
+    {
+      "id": "dimcarrier",
+      "is_selected": true,
+      "display_name": "dimcarrier",
+      "type": "ontology.entity",
+      "description": "dimcarrier",
+      "children": []
+    },
+    {
+      "id": "dimcosttype",
+      "is_selected": true,
+      "display_name": "dimcosttype",
+      "type": "ontology.entity",
+      "description": "dimcosttype",
+      "children": []
+    },
+    {
+      "id": "dimcustomer",
+      "is_selected": true,
+      "display_name": "dimcustomer",
+      "type": "ontology.entity",
+      "description": "dimcustomer",
+      "children": []
+    },
+    {
+      "id": "dimdate",
+      "is_selected": true,
+      "display_name": "dimdate",
+      "type": "ontology.entity",
+      "description": "dimdate",
+      "children": []
+    },
+    {
+      "id": "dimproduct",
+      "is_selected": true,
+      "display_name": "dimproduct",
+      "type": "ontology.entity",
+      "description": "dimproduct",
+      "children": []
+    },
+    {
+      "id": "dimroute",
+      "is_selected": true,
+      "display_name": "dimroute",
+      "type": "ontology.entity",
+      "description": "dimroute",
+      "children": []
+    },
+    {
+      "id": "dimsupplier",
+      "is_selected": true,
+      "display_name": "dimsupplier",
+      "type": "ontology.entity",
+      "description": "dimsupplier",
+      "children": []
+    },
+    {
+      "id": "dimwarehouse",
+      "is_selected": true,
+      "display_name": "dimwarehouse",
+      "type": "ontology.entity",
+      "description": "dimwarehouse",
+      "children": []
+    },
+    {
+      "id": "factexception",
+      "is_selected": true,
+      "display_name": "factexception",
+      "type": "ontology.entity",
+      "description": "factexception",
+      "children": []
+    },
+    {
+      "id": "factfreightinvoice",
+      "is_selected": true,
+      "display_name": "factfreightinvoice",
+      "type": "ontology.entity",
+      "description": "factfreightinvoice",
+      "children": []
+    },
+    {
+      "id": "factinboundreceipt",
+      "is_selected": true,
+      "display_name": "factinboundreceipt",
+      "type": "ontology.entity",
+      "description": "factinboundreceipt",
+      "children": []
+    },
+    {
+      "id": "factinventorysnapshot",
+      "is_selected": true,
+      "display_name": "factinventorysnapshot",
+      "type": "ontology.entity",
+      "description": "factinventorysnapshot",
+      "children": []
+    },
+    {
+      "id": "factorder",
+      "is_selected": true,
+      "display_name": "factorder",
+      "type": "ontology.entity",
+      "description": "factorder",
+      "children": []
+    },
+    {
+      "id": "factshipment",
+      "is_selected": true,
+      "display_name": "factshipment",
+      "type": "ontology.entity",
+      "description": "factshipment",
+      "children": []
+    },
+    {
+      "id": "factwarehousetask",
+      "is_selected": true,
+      "display_name": "factwarehousetask",
+      "type": "ontology.entity",
+      "description": "factwarehousetask",
+      "children": []
+    }
+  ],
+  "entitiesWithUserAuthoredDescriptions": []
+}

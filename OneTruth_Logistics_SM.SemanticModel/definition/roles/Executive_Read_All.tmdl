@@ -1,0 +1,7 @@
+role Executive_Read_All
+	modelPermission: read
+
+	tablePermission dimaccounts
+
+	annotation PBI_Id = 9552c98951344bf8a67fecd12b157133
+

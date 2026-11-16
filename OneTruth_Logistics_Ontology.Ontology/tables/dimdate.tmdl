@@ -1,0 +1,112 @@
+table dimdate
+	lineageTag: 09d24784-3158-4b4a-991b-992101c99dab
+	sourceLineageTag: d48c8638-1d98-4df4-a7fb-f1434037d45a
+
+	column date_key
+		dataType: dateTime
+		lineageTag: 73d295bd-adf0-4bec-a1a2-4ddf5cfc959c
+		sourceLineageTag: 09ad5db9-22ca-47a9-b594-ae3144b14e44
+		sourceColumn: date_key
+
+	column date_id
+		dataType: int64
+		lineageTag: aee2daff-ecdd-4a53-8a17-a6628340d51b
+		sourceLineageTag: 6d15db71-c13d-41c6-b6a2-4a892d4a2ec0
+		sourceColumn: date_id
+
+	column year
+		dataType: int64
+		lineageTag: ccd7a403-a37f-4d20-8354-6780a9b12dd3
+		sourceLineageTag: 3b939542-731c-47f6-be8b-a72affef50ea
+		sourceColumn: year
+
+	column quarter
+		dataType: int64
+		lineageTag: dca12cb5-6e7e-4b5b-8069-a31ada75a464
+		sourceLineageTag: fa311a7b-115c-4dae-9b42-5a195905f61c
+		sourceColumn: quarter
+
+	column month_num
+		dataType: int64
+		lineageTag: c6c419f4-2535-49a9-adec-71f3f0e13c0e
+		sourceLineageTag: f25ce8fd-a66a-49cb-bed4-42cb7ee0b14b
+		sourceColumn: month_num
+
+	column month_name
+		dataType: string
+		lineageTag: 0daf4942-3b0a-40eb-b475-ee86867a6da5
+		sourceLineageTag: cbf2b037-b730-41f9-be57-054bd8635eda
+		sourceColumn: month_name
+
+	column week_of_year
+		dataType: int64
+		lineageTag: 2a9a08c7-b11b-4728-b3f0-048636811e48
+		sourceLineageTag: 383d871e-600b-4908-a16f-722ad74357af
+		sourceColumn: week_of_year
+
+	column day_of_week
+		dataType: int64
+		lineageTag: 346030c1-021e-428c-9911-78dced33d992
+		sourceLineageTag: 4db6de3f-68ee-4adc-a506-040f99a4c0b4
+		sourceColumn: day_of_week
+
+	column day_name
+		dataType: string
+		lineageTag: 2b2903ff-8213-4e0e-ad20-9c419251d550
+		sourceLineageTag: 847fc68d-f2d2-49c9-9bcd-a357dc24840b
+		sourceColumn: day_name
+
+	column is_weekday
+		dataType: boolean
+		lineageTag: a3c54261-feb9-40ea-a1c4-1fb210397b79
+		sourceLineageTag: d59e8b1f-6dcc-4794-8abd-1ca2259b7b5c
+		sourceColumn: is_weekday
+
+	column fiscal_year
+		dataType: int64
+		lineageTag: b394f9ca-e748-42f3-a663-829970484a5c
+		sourceLineageTag: a672cbe7-9dd8-41b0-b6dc-00c2a558f6d6
+		sourceColumn: fiscal_year
+
+	column fiscal_quarter
+		dataType: int64
+		lineageTag: 6172adbf-4eb1-4ce3-b82f-6b07326af71c
+		sourceLineageTag: f3416d32-99e9-45d5-b661-a13bc7157e04
+		sourceColumn: fiscal_quarter
+
+	column year_month
+		dataType: string
+		lineageTag: 008f5803-d27b-4e59-8209-71ad002c4e0d
+		sourceLineageTag: 20554b94-8fa1-42cf-9f14-8ceff2e66fa7
+		sourceColumn: year_month
+
+	column _silver_processed_at
+		dataType: dateTime
+		lineageTag: cec55a58-6c0a-4791-b03b-558c1fda6063
+		sourceLineageTag: 75236985-2fe7-4322-912b-11d2c79e3245
+		sourceColumn: _silver_processed_at
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: ec13ba0d-1ba8-4db8-a9d9-fa7f7f677c6c
+		sourceLineageTag: 311c9278-cc45-4456-842f-278178d33471
+		sourceColumn: _gold_processed_at
+
+	partition dimdate-partition = entity
+		mode: directQuery
+		source
+			entityName: dimdate
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

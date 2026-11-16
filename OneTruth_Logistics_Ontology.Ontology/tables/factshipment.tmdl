@@ -1,0 +1,136 @@
+table factshipment
+	lineageTag: b93ecab9-1724-40f2-84a5-08bc35b11109
+	sourceLineageTag: 2d4c6a48-ae07-4c94-8c07-f1e88e4d74c8
+
+	column shipment_id
+		dataType: string
+		lineageTag: 3301e962-43bb-4870-b8f6-60673ba39bdc
+		sourceLineageTag: 99ac5163-0a80-45f7-b49f-b26d8213b47b
+		sourceColumn: shipment_id
+
+	column order_id
+		dataType: string
+		lineageTag: 8077f273-e443-4256-be7e-653d1c396c66
+		sourceLineageTag: 948be455-65c4-4cdf-9475-59cc66f5d882
+		sourceColumn: order_id
+
+	column carrier_sk
+		dataType: int64
+		lineageTag: f7f357f6-c322-4282-9f5c-5ceab943d968
+		sourceLineageTag: 46b4d685-c7a5-4733-a113-f6f7198b4795
+		sourceColumn: carrier_sk
+
+	column route_sk
+		dataType: int64
+		lineageTag: 4da80ee6-6fb2-4fa7-8b73-aab7b25e7347
+		sourceLineageTag: 79d2593e-0925-47e7-93db-15036359c970
+		sourceColumn: route_sk
+
+	column origin_warehouse_sk
+		dataType: int64
+		lineageTag: 8d485cfa-aee2-4535-a467-3cd352bed6ca
+		sourceLineageTag: 7920a957-4f66-4dc5-96fa-ace4c578ec23
+		sourceColumn: origin_warehouse_sk
+
+	column destination_warehouse_sk
+		dataType: int64
+		lineageTag: 80b9a5d8-a733-426a-a40e-1ed6ef14062d
+		sourceLineageTag: c5c92c3f-f17f-4581-8580-5fd2c1369eb6
+		sourceColumn: destination_warehouse_sk
+
+	column ship_date_id
+		dataType: int64
+		lineageTag: 6a252118-ea75-452a-86fa-b2e8fed4530f
+		sourceLineageTag: e5ccc7af-4928-4b2b-b7c3-b5e56e0414b5
+		sourceColumn: ship_date_id
+
+	column delivery_date_id
+		dataType: int64
+		lineageTag: 7efca202-ba21-4266-b679-280bef2973e1
+		sourceLineageTag: 55f25ffe-f418-4de7-a747-d98abc45c9ed
+		sourceColumn: delivery_date_id
+
+	column planned_delivery_date_id
+		dataType: int64
+		lineageTag: 9702ccb9-7d76-4e15-9193-9699797752eb
+		sourceLineageTag: a56a58d6-155c-4be6-acbf-e98943951230
+		sourceColumn: planned_delivery_date_id
+
+	column planned_ship_date
+		dataType: dateTime
+		lineageTag: 178dba6b-8503-4d2c-8a9e-221e50489392
+		sourceLineageTag: b5acbb2f-0b3e-4822-8b55-0427eda1db17
+		sourceColumn: planned_ship_date
+
+	column actual_ship_date
+		dataType: dateTime
+		lineageTag: 76efaec8-fa0f-4b15-b4f0-d9d213841303
+		sourceLineageTag: 0417c6bb-02d5-4040-ae7d-150026b648a5
+		sourceColumn: actual_ship_date
+
+	column planned_delivery_date
+		dataType: dateTime
+		lineageTag: c8d65b1a-27b6-41d2-a44a-728ae1645a61
+		sourceLineageTag: c65c1648-40e9-49e2-ad1d-2f61f2ea88a5
+		sourceColumn: planned_delivery_date
+
+	column actual_delivery_date
+		dataType: dateTime
+		lineageTag: d045687f-4c2a-4263-a29c-02321e4d3ab4
+		sourceLineageTag: aa33ec67-b531-4211-9a6c-211e7fe6aad6
+		sourceColumn: actual_delivery_date
+
+	column shipment_status
+		dataType: string
+		lineageTag: 49a71254-4838-44ec-a131-d156aa46eb6b
+		sourceLineageTag: f39e945d-41db-413a-9e14-03e6ff3f34e5
+		sourceColumn: shipment_status
+
+	column total_weight_kg
+		dataType: double
+		lineageTag: db4071f0-f19c-4c62-9fdf-141525313d98
+		sourceLineageTag: 86dad790-257b-46c0-95db-a2ac6025e3bc
+		sourceColumn: total_weight_kg
+
+	column shipment_mode
+		dataType: string
+		lineageTag: c41e2994-6ab3-481b-8528-6c213152ee54
+		sourceLineageTag: f57b45b1-e70f-478a-b5bc-e40f53185347
+		sourceColumn: shipment_mode
+
+	column delivery_variance_days
+		dataType: int64
+		lineageTag: 043882d0-4697-43f1-a852-fbdf4970db02
+		sourceLineageTag: 65942ee7-ad75-48a9-aad9-0c641d9bbcc7
+		sourceColumn: delivery_variance_days
+
+	column is_on_time
+		dataType: boolean
+		lineageTag: 443df1eb-798d-4c2a-87bb-8d4d8fd9d584
+		sourceLineageTag: 11ae0ed6-95a5-417b-9235-a9fea30accb2
+		sourceColumn: is_on_time
+
+	column _gold_processed_at
+		dataType: dateTime
+		lineageTag: c2825ff2-e3e7-4cbe-87f9-7b5a52805109
+		sourceLineageTag: b5859a69-3b6e-4b22-9607-f0bf31c96f11
+		sourceColumn: _gold_processed_at
+
+	partition factshipment-partition = entity
+		mode: directQuery
+		source
+			entityName: factshipment
+			expressionSource: 'DirectQuery to AS - fd2b1bb0-e015-4db1-b2c4-5768a0cba224/5bd9fe0f-1095-41e9-88d7-a456ca23d025'
+
+		annotation ONT_WorkspaceId = fd2b1bb0-e015-4db1-b2c4-5768a0cba224
+
+		annotation ONT_ItemId = 5bd9fe0f-1095-41e9-88d7-a456ca23d025
+
+		annotation ONT_ItemKind = Dataset
+
+		annotation ONT_ItemName = OneTruth_Logistics_SM
+
+		annotation ONT_WorkspaceName = Three Pilots Hackthon Workspace
+
+		annotation ONT_PinnedAtUtc = 2026-11-02T08:26:50.8474537+00:00
+

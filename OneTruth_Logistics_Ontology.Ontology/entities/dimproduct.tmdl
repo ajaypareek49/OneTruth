@@ -1,0 +1,78 @@
+/// An item that is stocked, purchased, sold, or shipped within the supply chain.
+entity dimproduct
+	lineageTag: 05ec3971-68db-43b4-8e49-7a41b0fb753c
+	backingTable: dimproduct
+
+	property product_sk
+		dataType: int64
+		lineageTag: 1e451b5f-3662-462c-9e63-3ad235aeb47d
+
+		backingConfiguration
+			valueColumn: dimproduct.product_sk
+
+	property product_nk
+		dataType: string
+		lineageTag: 91a16849-4d19-413f-94ff-bac424af6e64
+
+		backingConfiguration
+			valueColumn: dimproduct.product_nk
+
+	property product_name
+		dataType: string
+		lineageTag: b834bede-ff8c-45b3-aca1-49f84ebe4331
+
+		backingConfiguration
+			valueColumn: dimproduct.product_name
+
+	property category
+		dataType: string
+		lineageTag: a0fb11ae-9a16-420a-ab0f-81a90323e391
+
+		backingConfiguration
+			valueColumn: dimproduct.category
+
+	property brand
+		dataType: string
+		lineageTag: 30a1aaad-318b-413e-929f-6ec50b65b26c
+
+		backingConfiguration
+			valueColumn: dimproduct.brand
+
+	property unit_weight_kg
+		dataType: double
+		lineageTag: d38b642a-86e4-4783-b255-cd29b96f9751
+
+		backingConfiguration
+			valueColumn: dimproduct.unit_weight_kg
+
+	property unit_cost_usd
+		dataType: double
+		lineageTag: d83c2b38-fe62-4b1d-8428-decc7913d195
+
+		backingConfiguration
+			valueColumn: dimproduct.unit_cost_usd
+
+	property lead_time_days
+		dataType: int64
+		lineageTag: 4400e1b6-6c01-486f-bfd0-3e0b8fc8a7c9
+
+		backingConfiguration
+			valueColumn: dimproduct.lead_time_days
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: 8e9f998e-fb4a-4676-be99-b811dfb6e97f
+
+		backingConfiguration
+			valueColumn: dimproduct._gold_processed_at
+
+	synonym SKU
+
+	synonym item
+
+	synonym 'stock item'
+
+	synonym part
+
+	synonym goods
+

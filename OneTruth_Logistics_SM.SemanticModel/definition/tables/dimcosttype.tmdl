@@ -1,0 +1,61 @@
+table dimcosttype
+	lineageTag: 665a4be7-cf9b-4691-886c-cde40f26c821
+	sourceLineageTag: [dbo].[dimcosttype]
+
+	column cost_type_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 804bfb79-d06d-4f05-95f3-0d87d4e30852
+		sourceLineageTag: cost_type_sk
+		summarizeBy: none
+		sourceColumn: cost_type_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_type
+		dataType: string
+		lineageTag: 50464f13-4896-48b0-947e-ed5d791a1fa5
+		sourceLineageTag: cost_type
+		summarizeBy: none
+		sourceColumn: cost_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_category
+		dataType: string
+		lineageTag: 022d246a-0edf-46c4-ad50-fa641f551351
+		sourceLineageTag: cost_category
+		summarizeBy: none
+		sourceColumn: cost_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column cost_group
+		dataType: string
+		lineageTag: d0aa42d1-c0ae-410d-bb19-bb2948ad9362
+		sourceLineageTag: cost_group
+		summarizeBy: none
+		sourceColumn: cost_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 94114a5f-009c-4a36-a8ae-f4aa0f40fc4c
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimcosttype = entity
+		mode: directLake
+		source
+			entityName: dimcosttype
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

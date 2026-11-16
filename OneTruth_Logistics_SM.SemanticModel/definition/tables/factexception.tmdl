@@ -1,0 +1,126 @@
+table factexception
+	lineageTag: 37c5e2bd-6aeb-4902-9065-6598bd8e4f83
+	sourceLineageTag: [dbo].[factexception]
+
+	column exception_id
+		dataType: string
+		lineageTag: 07f268ae-d4d5-4246-8831-a07932415797
+		sourceLineageTag: exception_id
+		summarizeBy: none
+		sourceColumn: exception_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column exception_date_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 09df8065-77b3-4ffc-9919-5d89db64dc1c
+		sourceLineageTag: exception_date_id
+		summarizeBy: none
+		sourceColumn: exception_date_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column exception_type
+		dataType: string
+		lineageTag: f43696c7-b003-4a9e-9a9c-4b6fde2a7958
+		sourceLineageTag: exception_type
+		summarizeBy: none
+		sourceColumn: exception_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column related_entity_type
+		dataType: string
+		lineageTag: 737a52ae-0112-4715-8903-93a825495723
+		sourceLineageTag: related_entity_type
+		summarizeBy: none
+		sourceColumn: related_entity_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column related_entity_id
+		dataType: string
+		lineageTag: dfe7eb69-be20-4f28-8702-0cafdbca0b57
+		sourceLineageTag: related_entity_id
+		summarizeBy: none
+		sourceColumn: related_entity_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column exception_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b25f7f08-52b9-4037-aadf-77c9d5a1e7e9
+		sourceLineageTag: exception_date
+		summarizeBy: none
+		sourceColumn: exception_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: a5ef9c36-424d-4e5c-a0dc-cb3ca0d40a26
+		sourceLineageTag: severity
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 31dcb26c-a1fe-4538-b045-582b56fbf0ab
+		sourceLineageTag: status
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 4f136d7f-89f6-464d-8146-d750697fe420
+		sourceLineageTag: description
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_to
+		dataType: string
+		lineageTag: b5da75bd-e4d1-4a2f-940d-381ca16e9f0f
+		sourceLineageTag: assigned_to
+		summarizeBy: none
+		sourceColumn: assigned_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolution_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bfdf8a27-362b-4fce-a585-90f8e089476e
+		sourceLineageTag: resolution_date
+		summarizeBy: none
+		sourceColumn: resolution_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 0fda03cf-0a48-4405-992b-89c5ac5cbcdb
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factexception = entity
+		mode: directLake
+		source
+			entityName: factexception
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

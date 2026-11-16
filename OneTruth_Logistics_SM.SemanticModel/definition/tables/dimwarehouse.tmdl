@@ -1,0 +1,82 @@
+table dimwarehouse
+	lineageTag: d0a3835d-961f-4796-ad3a-f168488eb666
+	sourceLineageTag: [dbo].[dimwarehouse]
+
+	column warehouse_nk
+		dataType: string
+		isHidden
+		lineageTag: e42a8c04-1d78-4507-b083-fe6425f643f1
+		sourceLineageTag: warehouse_nk
+		summarizeBy: none
+		sourceColumn: warehouse_nk
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_name
+		dataType: string
+		lineageTag: c828db12-0a6d-46cc-8850-60d4d7836a68
+		sourceLineageTag: warehouse_name
+		summarizeBy: none
+		sourceColumn: warehouse_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 65ff6639-1573-4f78-bf53-2483d9d2e7d0
+		sourceLineageTag: city
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: d79a2225-a94f-4cdc-a351-1a80261d8141
+		sourceLineageTag: region
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_type
+		dataType: string
+		lineageTag: eb86021b-bce6-4f17-b781-8e167d921e13
+		sourceLineageTag: facility_type
+		summarizeBy: none
+		sourceColumn: facility_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column warehouse_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 232d9cfe-39e4-4490-a563-2e8460903193
+		sourceLineageTag: warehouse_sk
+		summarizeBy: none
+		sourceColumn: warehouse_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column _gold_processed_at
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 21340740-8b9e-4383-af7f-ff9527fb3e47
+		sourceLineageTag: _gold_processed_at
+		summarizeBy: none
+		sourceColumn: _gold_processed_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimwarehouse = entity
+		mode: directLake
+		source
+			entityName: dimwarehouse
+			schemaName: dbo
+			expressionSource: 'DirectLake - Gold_OneTruth_Logistics'
+

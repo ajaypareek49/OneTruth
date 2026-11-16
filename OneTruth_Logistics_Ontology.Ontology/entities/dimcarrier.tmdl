@@ -1,0 +1,92 @@
+/// A logistics service provider responsible for transporting shipments from origin to destination.
+entity dimcarrier
+	lineageTag: b1714553-8122-4349-9d91-3ecd99f9cc39
+	backingTable: dimcarrier
+
+	property carrier_sk
+		dataType: int64
+		lineageTag: 446c00b9-9b23-4d01-9760-cf69bb9472bd
+
+		backingConfiguration
+			valueColumn: dimcarrier.carrier_sk
+
+	property carrier_nk
+		dataType: string
+		lineageTag: e64e1ca2-82df-4915-9b0d-bbbdc9fba250
+
+		backingConfiguration
+			valueColumn: dimcarrier.carrier_nk
+
+	property carrier_name
+		dataType: string
+		lineageTag: 0d859480-93c7-4587-b26b-707628b7c098
+
+		backingConfiguration
+			valueColumn: dimcarrier.carrier_name
+
+	property carrier_type
+		dataType: string
+		lineageTag: 42176142-e38c-4516-acec-b6cbbf1b48c7
+
+		backingConfiguration
+			valueColumn: dimcarrier.carrier_type
+
+	property service_level
+		dataType: string
+		lineageTag: 9ae8e991-10c5-40fd-a71f-d05ccd938087
+
+		backingConfiguration
+			valueColumn: dimcarrier.service_level
+
+	property contact_email
+		dataType: string
+		lineageTag: a5eee445-a10e-4b64-a7f9-3813c22e7a71
+
+		backingConfiguration
+			valueColumn: dimcarrier.contact_email
+
+	property active_flag
+		dataType: int64
+		lineageTag: d5bbef28-7dee-42aa-810a-dc3cea8a9163
+
+		backingConfiguration
+			valueColumn: dimcarrier.active_flag
+
+	property effective_date
+		dataType: dateTime
+		lineageTag: 71e515fc-929b-47eb-9a89-f465f3180945
+
+		backingConfiguration
+			valueColumn: dimcarrier.effective_date
+
+	property expiry_date
+		dataType: dateTime
+		lineageTag: ed65ecf9-742b-4cd7-a17d-72dde91f198c
+
+		backingConfiguration
+			valueColumn: dimcarrier.expiry_date
+
+	property is_current
+		dataType: boolean
+		lineageTag: facc168d-427e-4e03-b2b8-a868859e0e7e
+
+		backingConfiguration
+			valueColumn: dimcarrier.is_current
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: 368a9dcd-4dbd-4090-b64c-b042c16260cf
+
+		backingConfiguration
+			valueColumn: dimcarrier._gold_processed_at
+
+	synonym 'freight carrier'
+
+	synonym 'transport provider'
+
+	synonym 3PL
+
+	synonym haulier
+
+	synonym 'shipping company'
+

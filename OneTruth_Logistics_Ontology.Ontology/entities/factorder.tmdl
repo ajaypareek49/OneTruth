@@ -1,0 +1,83 @@
+/// A customer or internal request requiring fulfilment of one or more products.
+entity factorder
+	lineageTag: a32f57f8-4ef3-4014-85b3-dc70d3ef7eef
+	backingTable: factorder
+
+	property order_id
+		dataType: string
+		lineageTag: b3bd4d5a-009a-4c7c-92c6-f00e61540b3c
+
+		backingConfiguration
+			valueColumn: factorder.order_id
+
+	property customer_sk
+		dataType: int64
+		lineageTag: 59c196ab-4a07-4fa7-af70-f200d8a32365
+
+		backingConfiguration
+			valueColumn: factorder.customer_sk
+
+	property fulfillment_warehouse_sk
+		dataType: int64
+		lineageTag: ae061971-4883-4c8b-9165-35f5651011c7
+
+		backingConfiguration
+			valueColumn: factorder.fulfillment_warehouse_sk
+
+	property order_date_id
+		dataType: int64
+		lineageTag: e173462b-ea82-4212-8e1d-42d510631f90
+
+		backingConfiguration
+			valueColumn: factorder.order_date_id
+
+	property order_date
+		dataType: dateTime
+		lineageTag: e41309ec-0c06-496c-8dc5-a0c4a5ae4673
+
+		backingConfiguration
+			valueColumn: factorder.order_date
+
+	property required_delivery_date
+		dataType: dateTime
+		lineageTag: 356c0d98-c4fd-4056-a7e8-3d2030c3b615
+
+		backingConfiguration
+			valueColumn: factorder.required_delivery_date
+
+	property order_status
+		dataType: string
+		lineageTag: 47ff9571-f092-4113-ad32-62aa75a751af
+
+		backingConfiguration
+			valueColumn: factorder.order_status
+
+	property order_channel
+		dataType: string
+		lineageTag: 592745b1-3e0f-4093-95a3-12eafb2f63cc
+
+		backingConfiguration
+			valueColumn: factorder.order_channel
+
+	property total_order_value_usd
+		dataType: double
+		lineageTag: 378d3d23-3a30-4c25-a4b7-16b76d30e905
+
+		backingConfiguration
+			valueColumn: factorder.total_order_value_usd
+
+	property _gold_processed_at
+		dataType: dateTime
+		lineageTag: 93a3d792-aa33-4de9-be67-bdf24a5f17ea
+
+		backingConfiguration
+			valueColumn: factorder._gold_processed_at
+
+	synonym 'purchase order'
+
+	synonym 'customer order'
+
+	synonym 'sales order'
+
+	synonym PO
+
